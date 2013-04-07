@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Data>
+  <Tables>
+    <Table>
+      <Schema>
+        <Name>Computer</Name>
+        <Field>
+          <Name>Processor</Name>
+        </Field>
+        <Field>
+          <Name>Memory</Name>
+        </Field>
+        <Field>
+          <Name>HDD</Name>
+        </Field>
+      </Schema>
+    </Table>
+  </Tables>
+</Data>

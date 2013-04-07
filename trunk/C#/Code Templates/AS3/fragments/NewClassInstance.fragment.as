@@ -1,0 +1,1 @@
+index(new CLASS_NAME(PARAMS)) as CLASS_NAME

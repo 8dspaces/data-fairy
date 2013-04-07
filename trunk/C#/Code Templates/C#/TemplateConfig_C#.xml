@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Config>
+  <Name>C# - DBVOs</Name>
+  <Author>John Beech</Author>
+  <Contact>data.fairy@mkv25.net</Contact>
+
+  <DatabaseFileTemplate>dbvos/DBVOsModel.cs</DatabaseFileTemplate>
+  <ClassFileTemplate>dbvos/DBVOTemplate.cs</ClassFileTemplate>
+  <EnumerationFileTemplate>enums/EnumTemplate.cs</EnumerationFileTemplate>
+  <PackageFile>interfaces/IDBVOsModel.cs</PackageFile>
+  <PackageFile>interfaces/IDBVO.cs</PackageFile>
+  <PackageFile>interfaces/IDBVOEnum.cs</PackageFile>
+  <PackageSeperator>.</PackageSeperator>
+</Config>

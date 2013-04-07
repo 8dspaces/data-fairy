@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Data>
+  <Tables>
+    <Table>
+      <Schema>
+        <Name>Inventory</Name>
+        <Field>
+          <Name>material</Name>
+          <Type>lookup</Type>
+          <Lookup>Material</Lookup>
+        </Field>
+        <Field>
+          <Name>owner</Name>
+          <Type>lookup</Type>
+          <Lookup>Owner</Lookup>
+        </Field>
+      </Schema>
+      <Row>
+        <id>0</id>
+        <name>Box</name>
+        <material />
+        <owner />
+      </Row>
+    </Table>
+    <Table>
+      <Schema>
+        <Name>Owner</Name>
+      </Schema>
+      <Row>
+        <id>0</id>
+        <name>Ancients</name>
+      </Row>
+      <Row>
+        <id>1</id>
+        <name>Humans</name>
+      </Row>
+      <Row>
+        <id>2</id>
+        <name>Neutral</name>
+      </Row>
+      <Row>
+        <id>6</id>
+        <name>Nature</name>
+      </Row>
+      <Row>
+        <id>7</id>
+        <name>New Comers</name>
+      </Row>
+    </Table>
+    <Table>
+      <Schema>
+        <Name>Material</Name>
+      </Schema>
+    </Table>
+    <Table>
+      <Schema>
+        <Name>Artwork</Name>
+        <Field>
+          <Name>path</Name>
+          <Type>string</Type>
+        </Field>
+      </Schema>
+      <Row>
+        <id>1</id>
+        <name>Material Icon</name>
+        <path>assets/graphics/materials/materials.swf</path>
+      </Row>
+    </Table>
+  </Tables>
+</Data>
