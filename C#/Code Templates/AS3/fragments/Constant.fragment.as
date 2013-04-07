@@ -1,0 +1,1 @@
+		public const var NAME:TYPE = VALUE;

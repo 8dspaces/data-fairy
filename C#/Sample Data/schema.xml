@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Data>
+  <Tables>
+    <Table>
+      <Schema>
+        <Name>Schema</Name>
+        <Field>
+          <Name>Field Name</Name>
+        </Field>
+        <Field>
+          <Name>Field Type</Name>
+        </Field>
+        <Field>
+          <Name>Field Lookup</Name>
+        </Field>
+      </Schema>
+    </Table>
+  </Tables>
+</Data>

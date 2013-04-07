@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<Config>
+  <Name>PHP - DBVOs</Name>
+  <Author>John Beech</Author>
+  <Contact>data.fairy@mkv25.net</Contact>
+
+  <DatabaseFileTemplate>dbvos/DBVOsModel.class.php</DatabaseFileTemplate>
+  <ClassFileTemplate>dbvos/DBVOTemplate.class.php</ClassFileTemplate>
+  <EnumerationFileTemplate>enums/EnumTemplate.class.php</EnumerationFileTemplate>
+  <PackageFile>interfaces/IDBVOsModel.class.php</PackageFile>
+  <PackageFile>interfaces/IDBVO.class.php</PackageFile>
+  <PackageFile>interfaces/IDBVOEnum.class.php</PackageFile>
+  <PackageSeperator>.</PackageSeperator>
+  <CreatePackageFolderStructure>false</CreatePackageFolderStructure>
+
+  <Variable key="Server">http://mkv25.net/data.fairy/</Variable>
+</Config>
