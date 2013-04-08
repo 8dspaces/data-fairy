@@ -20,7 +20,7 @@ namespace net.mkv25.writer
         public string WriteLocalVariable(string varName, string type, string value)
         {
             var s = fragmentBody;
-            s = s.Replace("VAR_NAME", varName);
+            s = s.Replace("NAME", varName);
             s = s.Replace("TYPE", type);
             s = s.Replace("VALUE", value);
             return s;
@@ -29,7 +29,7 @@ namespace net.mkv25.writer
         public string WriteConstant(string varName, string type, string value)
         {
             var s = fragmentBody;
-            s = s.Replace("VAR_NAME", varName);
+            s = s.Replace("NAME", varName);
             s = s.Replace("TYPE", type);
             s = s.Replace("VALUE", value);
             return s;

@@ -145,17 +145,17 @@
         <Field>
           <Name>requirement1</Name>
           <Type>lookup</Type>
-          <Lookup>recipe_ingredient</Lookup>
+          <Lookup>recipe part</Lookup>
         </Field>
         <Field>
           <Name>requirement2</Name>
           <Type>lookup</Type>
-          <Lookup>recipe_ingredient</Lookup>
+          <Lookup>recipe part</Lookup>
         </Field>
         <Field>
           <Name>result</Name>
           <Type>lookup</Type>
-          <Lookup>recipe_ingredient</Lookup>
+          <Lookup>recipe product</Lookup>
         </Field>
       </Schema>
       <Row>
@@ -163,7 +163,7 @@
         <name>Craft Steel Crate</name>
         <requirement1>1</requirement1>
         <requirement2>1</requirement2>
-        <result />
+        <result>0</result>
       </Row>
     </Table>
     <Table>

@@ -1,1 +1,1 @@
-		public const var NAME:TYPE = VALUE;
+		public static const NAME:TYPE = VALUE;

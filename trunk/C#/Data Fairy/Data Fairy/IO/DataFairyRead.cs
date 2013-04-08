@@ -25,9 +25,9 @@ namespace net.mkv25.DataFairy.IO
             XmlNodeList tableNodes = xmlFile.SelectNodes("/Data/Tables/Table");
             foreach (XmlNode tableNode in tableNodes)
             {
+                readTable(tableNode, file);
                 try
                 {
-                    readTable(tableNode, file);
                 }
                 catch (Exception e)
                 {
@@ -111,7 +111,19 @@ namespace net.mkv25.DataFairy.IO
                 foreach (var field in table.Schema.Fields)
                 {
                     if (rowNode[field.FieldName] != null)
-                        row[field.FieldName] = rowNode[field.FieldName].InnerText;
+                    {
+                        var value = rowNode[field.FieldName].InnerText;
+                        int valueInt = 0;
+                        if (field.FieldType == "int" || field.FieldType == "lookup")
+                        {
+                            if(int.TryParse(value, out valueInt))
+                                row[field.FieldName] = valueInt;
+                        }
+                        else
+                        {
+                            row[field.FieldName] = value;
+                        }
+                    }
                 }
 
                 // check Id constraint

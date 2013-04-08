@@ -89,5 +89,10 @@ namespace Data_Fairy_Editor
             if (RequestDeleteTable != null)
                 RequestDeleteTable();
         }
+
+        private void dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            // chill
+        }
     }
 }
