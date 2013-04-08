@@ -1,6 +1,6 @@
 package PACKAGE_STRING.dbvos
 {
-	import PACKAGE_STRING.interfaces;
+	import PACKAGE_STRING.interfaces.*;
 
 	public class CLASS_NAME implements IDBVORow
 	{

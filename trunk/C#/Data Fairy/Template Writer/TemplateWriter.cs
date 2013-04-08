@@ -78,6 +78,18 @@ namespace net.mkv25.writer
         {
             logMessages = new List<KeyValuePair<DateTime, string>>();
 
+            if (String.IsNullOrEmpty(outputDirectory))
+            {
+                Log("No output directory set");
+                return;
+            }
+
+            if (!Directory.Exists(outputDirectory))
+            {
+                Log("Output path does not exist.");
+                return;
+            }
+
             Log("Starting Write Process");
 
             // delete down files that already exist
@@ -95,12 +107,13 @@ namespace net.mkv25.writer
                 }
                 outputDirectory = outputDirectory + "\\" + packagePath.ToString();
             }
-            
+
             // do the work
+            WritePackageFiles(outputDirectory);
             WriteEnumerations(outputDirectory);
+            WriteRowFiles(outputDirectory);
             WriteTableFiles(outputDirectory);
             WriteDatabaseFile(outputDirectory);
-            WritePackageFiles(outputDirectory);
 
             Log("Finished Write Process");
         }
@@ -168,17 +181,24 @@ namespace net.mkv25.writer
 
                 // build the file
                 StringBuilder fileContents = new StringBuilder(rowFileTemplate.FileContents);
-                StringBuilder propertyList = new StringBuilder();
                 StringBuilder variableList = new StringBuilder();
+                StringBuilder propertyList = new StringBuilder();
 
-                // populate individual data rows
+                // populate list of variables
+                variableList.AppendLine("// code generated list of variables");
+                foreach (DataColumn column in table.Columns)
+                {
+                    string name = column.ColumnName;
+                    string type = (column.DataType.Name == "Int32") ? "int" : "String";
+                    variableList.AppendLine(classVariableFragment.WriteClassVariable(name, type));
+                }
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, templateVariables);
                 fileContents.Replace("PACKAGE_STRING", packageString);
                 fileContents.Replace("CLASS_NAME", className);
-                fileContents.Replace("PROPERTY_LIST", propertyList.ToString());
                 fileContents.Replace("VARIABLE_LIST", variableList.ToString());
+                fileContents.Replace("PROPERTY_LIST", propertyList.ToString());
 
                 // write the file
                 var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
