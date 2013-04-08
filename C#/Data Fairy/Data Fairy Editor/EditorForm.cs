@@ -34,6 +34,7 @@ namespace Data_Fairy_Editor
         void dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             // chill
+            var x = sender;
         }
 
         public void UpdateViews()

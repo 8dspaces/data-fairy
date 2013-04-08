@@ -88,6 +88,7 @@
             this.dataGridView.RowTemplate.Height = 30;
             this.dataGridView.Size = new System.Drawing.Size(526, 251);
             this.dataGridView.TabIndex = 1;
+            this.dataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView_DataError);
             // 
             // titleLabel
             // 

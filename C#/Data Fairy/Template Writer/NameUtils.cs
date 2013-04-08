@@ -23,5 +23,19 @@ namespace net.mkv25.writer
 
             return newName;
         }
+
+        public static string FormatClassConstantName(string variableName)
+        {
+            if (String.IsNullOrEmpty(variableName))
+                return variableName;
+
+            var invalid = System.IO.Path.GetInvalidFileNameChars().Concat(new char[] { ' ' });
+
+            string newName = new string(new CultureInfo(CultureInfo.CurrentCulture.LCID, false)
+                .TextInfo.ToUpper(variableName)
+                .Select(s => invalid.Contains(s) ? '_' : s).ToArray());
+
+            return newName;
+        }
     }
 }

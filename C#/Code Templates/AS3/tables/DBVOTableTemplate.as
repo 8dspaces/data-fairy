@@ -24,7 +24,7 @@ package PACKAGE_STRING.tables
 		
 		public function get tableName():String
 		{
-    	return "CLASS_NAME";
+			return "CLASS_NAME";
 		}
 	}
 }

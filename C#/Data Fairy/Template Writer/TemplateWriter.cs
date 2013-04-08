@@ -114,14 +114,39 @@ namespace net.mkv25.writer
                 return;
 
             string fileName;
+            string FOLDER = Path.GetDirectoryName(enumerationFileTemplate.FileName);
             string EXT = Path.GetExtension(enumerationFileTemplate.FileName);
             foreach(DataTable table in sourceDataSet.Tables)
             {
-                var enumerationName = NameUtils.FormatClassName(table.TableName) + "Enum";
-                fileName = enumerationName + "." + EXT;
-                // TODO: Write individual enumeration files
-                // TODO: Write individual enumeration rows
-                // TODO: Replace standard set of variables
+                var className = NameUtils.FormatClassName(table.TableName) + "Enum";
+                fileName = className + EXT;
+
+                // build the file
+                StringBuilder fileContents = new StringBuilder(enumerationFileTemplate.FileContents);
+                StringBuilder variableList = new StringBuilder();
+
+                // build the list of constants for the enum
+                variableList.AppendLine("// code generated list of all rows");
+                foreach (DataRow row in table.Rows)
+                {
+                    var variableName = NameUtils.FormatClassConstantName(row["Name"].ToString());
+                    variableList.AppendLine(constantFragment.WriteConstant(variableName, "int", row["Id"].ToString()));
+                }
+
+                // replace standard set of variables
+                ReplaceVariables(fileContents, templateVariables);
+                fileContents.Replace("PACKAGE_STRING", packageString);
+                fileContents.Replace("CLASS_NAME", className);
+                fileContents.Replace("VARIABLE_LIST", variableList.ToString());
+
+                // write the file
+                var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
+                Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+                StreamWriter writer = new StreamWriter(filePath);
+                writer.Write(fileContents);
+                writer.Close();
+
+                Log("Created Enum File - " + fileName);
             }
         }
 
@@ -230,7 +255,7 @@ namespace net.mkv25.writer
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
                 var classValue = newClassInstanceFragment.WriteNewClassInstance(className, "");
-                var varName = NameUtils.FormatClassName(table.TableName).ToUpper();
+                var varName = NameUtils.FormatClassConstantName(table.TableName);
                 variableList.AppendLine(classVariableFragment.WriteClassVariable(varName, className));
             }
 
@@ -240,8 +265,8 @@ namespace net.mkv25.writer
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
                 var classValue = newClassInstanceFragment.WriteNewClassInstance(className, "");
-                var varName = NameUtils.FormatClassName(table.TableName).ToUpper();
-                classList.AppendLine(localAssignmentFragment.WriteLocalAssignment(varName, classValue));
+                var variableName = NameUtils.FormatClassConstantName(table.TableName);
+                classList.AppendLine(localAssignmentFragment.WriteLocalAssignment(variableName, classValue));
             }
 
             // replace standard set of variables
