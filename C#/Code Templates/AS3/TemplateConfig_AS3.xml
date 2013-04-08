@@ -20,6 +20,7 @@
   <Fragment name="ClassVariable">fragments/ClassVariable.fragment.as</Fragment>
 
   <!-- Supporting package files -->
+  <PackageFile>AutoTests.as</PackageFile>
   <PackageFile>interfaces/IDBVOsModel.as</PackageFile>
   <PackageFile>interfaces/IDBVOEnum.as</PackageFile>
   <PackageFile>interfaces/IDBVOTable.as</PackageFile>

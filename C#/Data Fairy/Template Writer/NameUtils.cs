@@ -19,6 +19,8 @@ namespace net.mkv25.writer
                 .TextInfo.ToTitleCase(className.ToLower())
                 .Select(s => invalid.Contains(s) ? '_' : s).ToArray());
 
+            newName = newName.Replace("_", "");
+
             return newName;
         }
     }

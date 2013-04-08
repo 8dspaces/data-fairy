@@ -66,7 +66,22 @@
       </Row>
       <Row>
         <id>7</id>
-        <name>Unnamed 6</name>
+        <name>Plastic</name>
+        <artwork>2</artwork>
+      </Row>
+      <Row>
+        <id>8</id>
+        <name>Glass</name>
+        <artwork>2</artwork>
+      </Row>
+      <Row>
+        <id>9</id>
+        <name>Aluminum</name>
+        <artwork>2</artwork>
+      </Row>
+      <Row>
+        <id>11</id>
+        <name>Heat</name>
         <artwork>2</artwork>
       </Row>
     </Table>
@@ -87,6 +102,14 @@
           <Type>lookup</Type>
           <Lookup>material</Lookup>
         </Field>
+        <Field>
+          <Name>weight</Name>
+          <Type>int</Type>
+        </Field>
+        <Field>
+          <Name>capacity</Name>
+          <Type>decimal</Type>
+        </Field>
       </Schema>
       <Row>
         <id>0</id>
@@ -94,6 +117,8 @@
         <material>5</material>
         <costAmount>10</costAmount>
         <costMaterial>2</costMaterial>
+        <weight>40</weight>
+        <capacity>40</capacity>
       </Row>
       <Row>
         <id>1</id>
@@ -101,6 +126,90 @@
         <material>4</material>
         <costAmount>50</costAmount>
         <costMaterial>2</costMaterial>
+        <weight>100</weight>
+        <capacity>100</capacity>
+      </Row>
+      <Row>
+        <id>2</id>
+        <name>Plastic Crate</name>
+        <material>7</material>
+        <costAmount>80</costAmount>
+        <costMaterial>2</costMaterial>
+        <weight>40</weight>
+        <capacity>100</capacity>
+      </Row>
+    </Table>
+    <Table>
+      <Schema>
+        <Name>recipe</Name>
+        <Field>
+          <Name>requirement1</Name>
+          <Type>lookup</Type>
+          <Lookup>recipe_ingredient</Lookup>
+        </Field>
+        <Field>
+          <Name>requirement2</Name>
+          <Type>lookup</Type>
+          <Lookup>recipe_ingredient</Lookup>
+        </Field>
+        <Field>
+          <Name>result</Name>
+          <Type>lookup</Type>
+          <Lookup>recipe_ingredient</Lookup>
+        </Field>
+      </Schema>
+      <Row>
+        <id>0</id>
+        <name>Craft Steel Crate</name>
+        <requirement1>1</requirement1>
+        <requirement2>1</requirement2>
+        <result />
+      </Row>
+    </Table>
+    <Table>
+      <Schema>
+        <Name>recipe part</Name>
+        <Field>
+          <Name>material</Name>
+          <Type>lookup</Type>
+          <Lookup>material</Lookup>
+        </Field>
+        <Field>
+          <Name>amount</Name>
+          <Type>int</Type>
+        </Field>
+      </Schema>
+      <Row>
+        <id>1</id>
+        <name>Box Steel x20</name>
+        <material>4</material>
+        <amount>20</amount>
+      </Row>
+      <Row>
+        <id>3</id>
+        <name>Forge Heat x20</name>
+        <material>11</material>
+        <amount>20</amount>
+      </Row>
+    </Table>
+    <Table>
+      <Schema>
+        <Name>recipe product</Name>
+        <Field>
+          <Name>box</Name>
+          <Type>lookup</Type>
+          <Lookup>box</Lookup>
+        </Field>
+        <Field>
+          <Name>amount</Name>
+          <Type>decimal</Type>
+        </Field>
+      </Schema>
+      <Row>
+        <id>0</id>
+        <name>Steel Crate</name>
+        <box>1</box>
+        <amount>5</amount>
       </Row>
     </Table>
   </Tables>

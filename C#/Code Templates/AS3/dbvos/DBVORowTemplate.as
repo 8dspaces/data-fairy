@@ -1,4 +1,4 @@
-PACKAGE_STRING.dbvos
+package PACKAGE_STRING.dbvos
 {
 	import PACKAGE_STRING.interfaces;
 

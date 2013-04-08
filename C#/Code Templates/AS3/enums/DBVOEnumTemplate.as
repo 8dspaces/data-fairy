@@ -1,4 +1,4 @@
-PACKAGE_STRING.enums
+package PACKAGE_STRING.enums
 {
 	import PACKAGE_STRING.interfaces;
 
