@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.IO;
+using net.mkv25.DataFairy.VO;
 
 namespace net.mkv25.writer
 {
     public class TemplateWriter
     {
+        /** The dataset to base the code generation on */
+        public DataFairyFile sourceDataSet;
+
         /** name of this template */
         public string name;
 
@@ -35,9 +39,6 @@ namespace net.mkv25.writer
         
         /** A list of strings to search and replace on */
         public List<KeyValuePair<string, string>> templateVariables;
-
-        /** The dataset to base the code generation on */
-        public DataSet sourceDataSet;
 
         /* A list of messages generated during the write process */
         public List<KeyValuePair<DateTime, string>> logMessages;
@@ -174,7 +175,7 @@ namespace net.mkv25.writer
             string fileName;
             string FOLDER = Path.GetDirectoryName(rowFileTemplate.FileName);
             string EXT = Path.GetExtension(rowFileTemplate.FileName);
-            foreach (DataTable table in sourceDataSet.Tables)
+            foreach (DataFairyTable table in sourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Row";
                 fileName = className + EXT;
@@ -186,10 +187,10 @@ namespace net.mkv25.writer
 
                 // populate list of variables
                 variableList.AppendLine("// code generated list of variables");
-                foreach (DataColumn column in table.Columns)
+                foreach (DataFairySchemaField field in table.Schema.Fields)
                 {
-                    string name = column.ColumnName;
-                    string type = (column.DataType.Name == "Int32") ? "int" : "String";
+                    string name = field.FieldName;
+                    string type = (field.FieldType == "lookup") ? NameUtils.FormatClassName(field.FieldLookUp) + "Row" : field.FieldType;
                     variableList.AppendLine(classVariableFragment.WriteClassVariable(name, type));
                 }
 

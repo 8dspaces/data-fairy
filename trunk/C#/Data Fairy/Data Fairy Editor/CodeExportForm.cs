@@ -11,12 +11,13 @@ using System.IO;
 using Microsoft.Win32;
 using Data_Fairy_Editor.Properties;
 using System.Diagnostics;
+using net.mkv25.DataFairy.VO;
 
 namespace Data_Fairy_Editor
 {
     public partial class CodeExportForm : Form
     {
-        public DataSet SourceDataSet;
+        public DataFairyFile SourceDataSet;
 
         protected StringBuilder reporterLog;
         protected Stopwatch exportTimer;
