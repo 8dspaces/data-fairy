@@ -112,9 +112,9 @@
       <Project>{E51D1431-3AC2-465E-993C-69916871528D}</Project>
       <Name>Data Fairy IO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Template Writer\Template Writer.csproj">
+    <ProjectReference Include="..\Template Writer\Data Fairy Template Writer.csproj">
       <Project>{017E8664-2CAD-4C62-901B-C642E9974884}</Project>
-      <Name>Template Writer</Name>
+      <Name>Data Fairy Template Writer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

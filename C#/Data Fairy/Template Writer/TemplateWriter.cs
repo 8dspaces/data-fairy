@@ -36,7 +36,10 @@ namespace net.mkv25.writer
 
         /** Any other template files that exist in the package */
         public List<TemplateFile> packageFileTemplates;
-        
+
+        /** A list of strings to search and replace on */
+        public Dictionary<string, string> basicTypes;
+
         /** A list of strings to search and replace on */
         public List<KeyValuePair<string, string>> templateVariables;
 
@@ -61,7 +64,10 @@ namespace net.mkv25.writer
         /** A fragment for writing new class instances */
         public TemplateFragment newClassInstanceFragment;
 
-        /** A fragment for writing new static variables */
+        /** A fragment for writing new class properties */
+        public TemplateFragment classPropertyFragment;
+
+        /** A fragment for writing new class level variables */
         public TemplateFragment classVariableFragment;
 
         /** The package path to use for code generation */
@@ -70,6 +76,14 @@ namespace net.mkv25.writer
         public TemplateWriter()
         {
             templateVariables = new List<KeyValuePair<string, string>>();
+        }
+
+        /** Lookup function to convert local type in to language specific type */
+        protected string getBasicType(string requestedType)
+        {
+            if (basicTypes.ContainsKey(requestedType))
+                return basicTypes[requestedType];
+            return requestedType;
         }
 
         /**
@@ -144,7 +158,7 @@ namespace net.mkv25.writer
                 foreach (DataRow row in table.Rows)
                 {
                     var variableName = NameUtils.FormatClassConstantName(row["Name"].ToString());
-                    variableList.AppendLine(constantFragment.WriteConstant(variableName, "int", row["Id"].ToString()));
+                    variableList.AppendLine(constantFragment.WriteConstant(variableName, getBasicType("int"), row["Id"].ToString()));
                 }
 
                 // replace standard set of variables
@@ -187,11 +201,19 @@ namespace net.mkv25.writer
 
                 // populate list of variables
                 variableList.AppendLine("// code generated list of variables");
+                propertyList.AppendLine("// code generated list of properties");
                 foreach (DataFairySchemaField field in table.Schema.Fields)
                 {
+                    // create variable for basic types
                     string name = field.FieldName;
-                    string type = (field.FieldType == "lookup") ? NameUtils.FormatClassName(field.FieldLookUp) + "Row" : field.FieldType;
+                    string type = (field.FieldType == "lookup") ? getBasicType("int") : getBasicType(field.FieldType);
                     variableList.AppendLine(classVariableFragment.WriteClassVariable(name, type));
+
+                    // create properties for lookup values
+                    if (field.FieldType == "lookup")
+                    {
+                        propertyList.AppendLine(classPropertyFragment.WriteClassProperty(name, NameUtils.FormatClassName(field.FieldLookUp) + "Row"));
+                    }
                 }
 
                 // replace standard set of variables

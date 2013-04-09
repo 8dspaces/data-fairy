@@ -43,9 +43,18 @@ namespace net.mkv25.writer
             return s;
         }
 
-        public string WriteClassVariable(string name, string type)
+        public string WriteClassProperty(string name, string type)
         {
             var s = fragmentBody;
+            s = s.Replace("NAME", name);
+            s = s.Replace("TYPE", type);
+            return s;
+        }
+
+        public string WriteClassVariable(string name, string type, string scope = "public")
+        {
+            var s = fragmentBody;
+            s = s.Replace("SCOPE", scope);
             s = s.Replace("NAME", name);
             s = s.Replace("TYPE", type);
             return s;

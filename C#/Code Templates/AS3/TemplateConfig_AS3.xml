@@ -17,8 +17,14 @@
   <Fragment name="LocalVariable">fragments/LocalVariable.fragment.as</Fragment>
   <Fragment name="Constant">fragments/Constant.fragment.as</Fragment>
   <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.as</Fragment>
+  <Fragment name="ClassProperty">fragments/ClassProperty.fragment.as</Fragment>
   <Fragment name="ClassVariable">fragments/ClassVariable.fragment.as</Fragment>
 
+  <!-- Basic types for this language -->
+  <Type name="int">int</Type>
+  <Type name="string">String</Type>
+  <Type name="decimal">Number</Type>
+  
   <!-- Supporting package files -->
   <PackageFile>AutoTests.as</PackageFile>
   <PackageFile>interfaces/IDBVOsModel.as</PackageFile>

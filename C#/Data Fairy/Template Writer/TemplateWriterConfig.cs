@@ -109,8 +109,19 @@ namespace net.mkv25.writer
                     template.constantFragment = fragment;
                 else if (fragmentName == "NewClassInstance")
                     template.newClassInstanceFragment = fragment;
+                else if (fragmentName == "ClassProperty")
+                    template.classPropertyFragment = fragment;
                 else if (fragmentName == "ClassVariable")
                     template.classVariableFragment = fragment;
+            }
+
+            XmlNodeList typeNodes = xml.SelectNodes("/Config/Type");
+            template.basicTypes = new Dictionary<string, string>();
+            foreach (XmlNode typeNode in typeNodes)
+            {
+                var key = typeNode.Attributes["name"].Value;
+                var value = typeNode.InnerText;
+                template.basicTypes.Add(key, value);
             }
 
             return template;

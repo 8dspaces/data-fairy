@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Fairy IO", "Data Fairy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Fairy Editor", "Data Fairy Editor\Data Fairy Editor.csproj", "{AC152296-76BD-41EC-96B9-70C6254C575B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template Writer", "Template Writer\Template Writer.csproj", "{017E8664-2CAD-4C62-901B-C642E9974884}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data Fairy Template Writer", "Template Writer\Data Fairy Template Writer.csproj", "{017E8664-2CAD-4C62-901B-C642E9974884}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
