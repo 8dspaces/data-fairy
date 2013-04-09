@@ -46,5 +46,17 @@ package PACKAGE_STRING.dbvos
 		{
 			return _loaded;
 		}
+		
+		/** Retrieves a row from a table */
+		public function retrieve(id:int, type:Class):IDBVORow
+		{
+			var table:IDBVOTable = selectTable(type);
+		}
+		
+		/** Retrieves a table by type */
+		public function selectTable(type:Class):IDBVOTable
+		{
+			
+		}
 	}
 }

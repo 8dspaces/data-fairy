@@ -4,6 +4,8 @@ package PACKAGE_STRING.dbvos
 
 	public class CLASS_NAME implements IDBVORow
 	{
+		public var dbvos:IDBVOsModel;
+		
 		VARIABLE_LIST
 
 		public function CLASS_NAME():void
