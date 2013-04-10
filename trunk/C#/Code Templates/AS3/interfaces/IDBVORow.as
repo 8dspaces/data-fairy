@@ -1,6 +1,6 @@
 package PACKAGE_STRING.interfaces
 {
-	public interface IDBVO
+	public interface IDBVORow
 	{
 		function get id():int;
 		function get name():String;

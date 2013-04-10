@@ -51,6 +51,7 @@ package PACKAGE_STRING.dbvos
 		public function retrieve(id:int, type:Class):IDBVORow
 		{
 			var table:IDBVOTable = selectTable(type);
+			return table.getRow(id);
 		}
 		
 		/** Retrieves a table by type */

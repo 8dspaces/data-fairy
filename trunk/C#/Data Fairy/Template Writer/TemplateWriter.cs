@@ -207,12 +207,16 @@ namespace net.mkv25.writer
                     // create variable for basic types
                     string name = field.FieldName;
                     string type = (field.FieldType == "lookup") ? getBasicType("int") : getBasicType(field.FieldType);
-                    variableList.AppendLine(classVariableFragment.WriteClassVariable(name, type));
 
                     // create properties for lookup values
                     if (field.FieldType == "lookup")
                     {
                         propertyList.AppendLine(classPropertyFragment.WriteClassProperty(name, NameUtils.FormatClassName(field.FieldLookUp) + "Row"));
+                        variableList.AppendLine(classVariableFragment.WriteClassVariable(name + "Id", type));
+                    }
+                    else
+                    {
+                        variableList.AppendLine(classVariableFragment.WriteClassVariable(name, type));
                     }
                 }
 
@@ -248,6 +252,7 @@ namespace net.mkv25.writer
             foreach (DataTable table in sourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
+                var rowClassName = NameUtils.FormatClassName(table.TableName) + "Row";
                 fileName = className + EXT;
 
                 // build the file
@@ -260,6 +265,7 @@ namespace net.mkv25.writer
                 ReplaceVariables(fileContents, templateVariables);
                 fileContents.Replace("PACKAGE_STRING", packageString);
                 fileContents.Replace("CLASS_NAME", className);
+                fileContents.Replace("ROW_CLASS_NAME", className);
                 fileContents.Replace("ROW_LIST", rowList.ToString());
 
                 // write the file

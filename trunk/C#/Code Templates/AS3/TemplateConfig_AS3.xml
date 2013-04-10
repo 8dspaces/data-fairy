@@ -30,7 +30,7 @@
   <PackageFile>interfaces/IDBVOsModel.as</PackageFile>
   <PackageFile>interfaces/IDBVOEnum.as</PackageFile>
   <PackageFile>interfaces/IDBVOTable.as</PackageFile>
-  <PackageFile>interfaces/IDBVO.as</PackageFile>
+  <PackageFile>interfaces/IDBVORow.as</PackageFile>
 
   <!-- Package generation options -->
   <PackageSeperator>.</PackageSeperator>
