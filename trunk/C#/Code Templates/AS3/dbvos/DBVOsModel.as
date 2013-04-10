@@ -23,6 +23,8 @@ package PACKAGE_STRING.dbvos
 		/** Initialise the list of tables */
 		public function init():void
 		{
+			var dbvos:IDBVOsModel = this;
+
 			CLASS_LIST
 			
 			_loaded = true;

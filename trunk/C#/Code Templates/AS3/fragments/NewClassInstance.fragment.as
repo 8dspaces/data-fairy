@@ -1,1 +1,1 @@
-index(new CLASS_NAME().init(PARAMS)) as CLASS_NAME
+index(new CLASS_NAME(dbvos).init(PARAMS)) as CLASS_NAME

@@ -8,9 +8,9 @@ package PACKAGE_STRING.tables
 		protected var _dbvos:IDBVOsModel;
 		protected var _rowList:Vector.<ROW_CLASS_NAME>;
 	
-		public function CLASS_NAME():void
+		public function CLASS_NAME(dbvos:IDBVOsModel):void
 		{
-		
+			_dbvos = dbvos;
 		}
 
 		public function init():CLASS_NAME
