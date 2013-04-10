@@ -302,13 +302,17 @@ namespace net.mkv25.writer
                             rowParameters.Append(", ");
 
                         // create properties for lookup values
+                        string rowValue = row[field.FieldName].ToString();
                         if (field.FieldType == "lookup" || field.FieldType == "int" || field.FieldType == "decimal")
                         {
-                            rowParameters.Append(row[field.FieldName].ToString());
+                            if (String.IsNullOrEmpty(rowValue))
+                                rowValue = "-1";
+                            rowParameters.Append(rowValue);
                         }
                         else
                         {
-                            rowParameters.Append(String.Format("\"{0}\"", row[field.FieldName].ToString()));
+                            rowValue = rowValue.Replace("\"", "\\\"");
+                            rowParameters.Append(String.Format("\"{0}\"", rowValue));
                         }
                     }
 

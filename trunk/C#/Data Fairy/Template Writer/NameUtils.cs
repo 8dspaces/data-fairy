@@ -43,7 +43,22 @@ namespace net.mkv25.writer
             if (String.IsNullOrEmpty(variableName))
                 return variableName;
 
-            var invalid = System.IO.Path.GetInvalidFileNameChars().Concat(new char[] { ' ' });
+            var invalid = System.IO.Path.GetInvalidFileNameChars().Concat(new char[] { ' ' }).ToList();
+            invalid.Add('!');
+            invalid.Add('£');
+            invalid.Add('$');
+            invalid.Add('%');
+            invalid.Add('^');
+            invalid.Add('&');
+            invalid.Add('(');
+            invalid.Add(')');
+            invalid.Add('{');
+            invalid.Add('}');
+            invalid.Add('[');
+            invalid.Add(']');
+            invalid.Add('\'');
+            invalid.Add(';');
+            invalid.Add('@');
 
             string newName = new string(new CultureInfo(CultureInfo.CurrentCulture.LCID, false)
                 .TextInfo.ToUpper(variableName)
