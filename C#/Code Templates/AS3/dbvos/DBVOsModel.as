@@ -57,7 +57,12 @@ package PACKAGE_STRING.dbvos
 		/** Retrieves a table by type */
 		public function selectTable(type:Class):IDBVOTable
 		{
-			
+			for each(var table:IDBVOTable in _tableList)
+			{
+				if(table.rowType == type)
+					return table;
+			}
+			return null;
 		}
 	}
 }

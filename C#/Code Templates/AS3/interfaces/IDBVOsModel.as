@@ -4,5 +4,6 @@ package PACKAGE_STRING.interfaces
 	{
 		function get tableList():Vector.<IDBVOTable>;
 		function get loaded():Boolean;
+		function retrieve(id:int, type:Class):IDBVORow;
 	}
 }

@@ -2,7 +2,7 @@
 		public function get NAME():TYPE
 		{
 			if(!_NAME)
-				_NAME = dbvos.retreive(NAMEId, TYPE) as TYPE;
+				_NAME = dbvos.retrieve(NAMEId, TYPE) as TYPE;
 			return _NAME;
 		}
 		

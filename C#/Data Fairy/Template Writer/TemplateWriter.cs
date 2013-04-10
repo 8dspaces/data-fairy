@@ -198,10 +198,15 @@ namespace net.mkv25.writer
                 StringBuilder fileContents = new StringBuilder(rowFileTemplate.FileContents);
                 StringBuilder variableList = new StringBuilder();
                 StringBuilder propertyList = new StringBuilder();
+                StringBuilder paramsString = new StringBuilder();
+                StringBuilder paramsList = new StringBuilder();
 
-                // populate list of variables
+                // start code blocks off with comments
                 variableList.AppendLine("// code generated list of variables");
                 propertyList.AppendLine("// code generated list of properties");
+
+                // populate list of variables
+                variableList.AppendLine(classVariableFragment.WriteClassVariable("name", getBasicType("string")));
                 foreach (DataFairySchemaField field in table.Schema.Fields)
                 {
                     // create variable for basic types
@@ -218,6 +223,10 @@ namespace net.mkv25.writer
                     {
                         variableList.AppendLine(classVariableFragment.WriteClassVariable(name, type));
                     }
+
+                    if (paramsString.Length > 0)
+                        paramsString.Append(", ");
+                    paramsString.Append(field.FieldType);
                 }
 
                 // replace standard set of variables
@@ -226,6 +235,8 @@ namespace net.mkv25.writer
                 fileContents.Replace("CLASS_NAME", className);
                 fileContents.Replace("VARIABLE_LIST", variableList.ToString());
                 fileContents.Replace("PROPERTY_LIST", propertyList.ToString());
+                fileContents.Replace("CLASS_PARAMS_STRING", paramsString.ToString());
+                fileContents.Replace("CLASS_PARAMS_LIST", paramsList.ToString());
 
                 // write the file
                 var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
@@ -249,7 +260,7 @@ namespace net.mkv25.writer
             string fileName;
             string FOLDER = Path.GetDirectoryName(tableFileTemplate.FileName);
             string EXT = Path.GetExtension(tableFileTemplate.FileName);
-            foreach (DataTable table in sourceDataSet.Tables)
+            foreach (DataFairyTable table in sourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
                 var rowClassName = NameUtils.FormatClassName(table.TableName) + "Row";
@@ -260,12 +271,36 @@ namespace net.mkv25.writer
                 StringBuilder rowList = new StringBuilder();
 
                 // populate individual data rows
+                rowList.AppendLine("// code generated list of all rows");
+                foreach (DataRow row in table.Rows)
+                {
+                    var rowParameters = new StringBuilder();
+
+                    // populate list of variables
+                    foreach (DataFairySchemaField field in table.Schema.Fields)
+                    {
+                        // create properties for lookup values
+                        if (field.FieldType == "lookup" || field.FieldType == "int" || field.FieldType == "decimal")
+                        {
+                            if (rowParameters.Length > 0)
+                                rowParameters.Append(", ");
+                            rowParameters.Append(row[field.FieldName].ToString());
+                        }
+                        else
+                        {
+                            rowParameters.Append(String.Format("\"{0}\"", row[field.FieldName].ToString()));
+                        }
+                    }
+
+                    var classValue = newClassInstanceFragment.WriteNewClassInstance(rowClassName, rowParameters.ToString());
+                    rowList.AppendLine(localVariableFragment.WriteLocalVariable("row" + row["id"].ToString(), rowClassName, classValue));
+                }
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, templateVariables);
                 fileContents.Replace("PACKAGE_STRING", packageString);
+                fileContents.Replace("ROW_CLASS_NAME", rowClassName);
                 fileContents.Replace("CLASS_NAME", className);
-                fileContents.Replace("ROW_CLASS_NAME", className);
                 fileContents.Replace("ROW_LIST", rowList.ToString());
 
                 // write the file

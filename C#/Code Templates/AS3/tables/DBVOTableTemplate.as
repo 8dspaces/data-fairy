@@ -9,7 +9,17 @@ package PACKAGE_STRING.tables
 	
 		public function CLASS_NAME():void
 		{
-			init();
+		
+		}
+		
+		public static function create(CLASS_PARAMS):CLASS_NAME
+		{
+			var instance:ClassName = new ClassName();
+		
+			CLASS_PARAMS_LIST
+			instance.init();
+		
+			return instance;
 		}
 
 		public function init():void
