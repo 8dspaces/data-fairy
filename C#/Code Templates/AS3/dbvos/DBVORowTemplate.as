@@ -9,9 +9,9 @@ package PACKAGE_STRING.dbvos
 		VARIABLE_LIST
 		protected var _id:int;
 		
-		public function CLASS_NAME():void
+		public function CLASS_NAME(dbvos:IDBVOsModel):void
 		{
-			
+			_dbvos = dbvos;
 		}
 		
 		public function init(CLASS_PARAMS_STRING):CLASS_NAME
