@@ -31,6 +31,7 @@ package PACKAGE_STRING.dbvos
 		/** Indexes a table */
 		protected function index(table:IDBVOTable):IDBVOTable
 		{
+			table.dbvos = this;
 			_tableList.push(table);
 			return table;
 		}

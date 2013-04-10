@@ -52,11 +52,17 @@ namespace net.mkv25.writer
         /** Should the code template generate folders that match the package structure */
         public bool generatePackageFolderStructure;
 
-        /** A fragment for variable assignment */
-        public TemplateFragment localVariableFragment;
+        /** A fragment for writing new class properties */
+        public TemplateFragment classPropertyFragment;
+
+        /** A fragment for writing new class level variables */
+        public TemplateFragment classVariableFragment;
 
         /** A fragment for defining a constant */
         public TemplateFragment constantFragment;
+
+        /** A fragment for variable assignment */
+        public TemplateFragment localVariableFragment;
 
         /** A fragment for variable assignment */
         public TemplateFragment localAssignmentFragment;
@@ -64,12 +70,9 @@ namespace net.mkv25.writer
         /** A fragment for writing new class instances */
         public TemplateFragment newClassInstanceFragment;
 
-        /** A fragment for writing new class properties */
-        public TemplateFragment classPropertyFragment;
-
-        /** A fragment for writing new class level variables */
-        public TemplateFragment classVariableFragment;
-
+        /** A fragment for writing parameters */
+        public TemplateFragment parameterFragment;
+        
         /** The package path to use for code generation */
         public string packageString;
 
@@ -81,6 +84,10 @@ namespace net.mkv25.writer
         /** Lookup function to convert local type in to language specific type */
         protected string getBasicType(string requestedType)
         {
+            // convert "lookup" into int field
+            if (requestedType == "lookup")
+                return getBasicType("int");
+
             if (basicTypes.ContainsKey(requestedType))
                 return basicTypes[requestedType];
             return requestedType;
@@ -165,7 +172,7 @@ namespace net.mkv25.writer
                 ReplaceVariables(fileContents, templateVariables);
                 fileContents.Replace("PACKAGE_STRING", packageString);
                 fileContents.Replace("CLASS_NAME", className);
-                fileContents.Replace("VARIABLE_LIST", variableList.ToString());
+                fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
 
                 // write the file
                 var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
@@ -204,39 +211,51 @@ namespace net.mkv25.writer
                 // start code blocks off with comments
                 variableList.AppendLine("// code generated list of variables");
                 propertyList.AppendLine("// code generated list of properties");
+                paramsList.AppendLine("// code generated list of params");
 
                 // populate list of variables
-                variableList.AppendLine(classVariableFragment.WriteClassVariable("name", getBasicType("string")));
-                foreach (DataFairySchemaField field in table.Schema.Fields)
+                foreach (DataFairySchemaField field in table.Schema.AllFields)
                 {
                     // create variable for basic types
-                    string name = field.FieldName;
-                    string type = (field.FieldType == "lookup") ? getBasicType("int") : getBasicType(field.FieldType);
+                    string fieldName = field.FieldName;
+                    string fieldType = getBasicType(field.FieldType);
+
+                    // create variable for assignment type
+                    var paramName = "_" + NameUtils.FormatVariableName(field.FieldName);
+                    var paramType = getBasicType(field.FieldType);
+                    if (paramsString.Length > 0)
+                        paramsString.Append(", ");
 
                     // create properties for lookup values
                     if (field.FieldType == "lookup")
                     {
-                        propertyList.AppendLine(classPropertyFragment.WriteClassProperty(name, NameUtils.FormatClassName(field.FieldLookUp) + "Row"));
-                        variableList.AppendLine(classVariableFragment.WriteClassVariable(name + "Id", type));
+                        paramName = paramName + "Id";
+                        propertyList.AppendLine(classPropertyFragment.WriteClassProperty(fieldName, NameUtils.FormatClassName(field.FieldLookUp) + "Row"));
+                        variableList.AppendLine(classVariableFragment.WriteClassVariable(fieldName + "Id", fieldType));
+                        paramsList.AppendLine(localAssignmentFragment.WriteLocalAssignment(fieldName + "Id", paramName));
+                    }
+                    else if (field.FieldName == "id")
+                    {
+                        // id is a required property on the template
+                        paramsList.AppendLine(localAssignmentFragment.WriteLocalAssignment(fieldName, paramName));
                     }
                     else
                     {
-                        variableList.AppendLine(classVariableFragment.WriteClassVariable(name, type));
+                        variableList.AppendLine(classVariableFragment.WriteClassVariable(fieldName, fieldType));
+                        paramsList.AppendLine(localAssignmentFragment.WriteLocalAssignment(fieldName, paramName));
                     }
 
-                    if (paramsString.Length > 0)
-                        paramsString.Append(", ");
-                    paramsString.Append(field.FieldType);
+                    paramsString.Append(parameterFragment.WriteParameter(paramName, paramType));
                 }
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, templateVariables);
                 fileContents.Replace("PACKAGE_STRING", packageString);
                 fileContents.Replace("CLASS_NAME", className);
-                fileContents.Replace("VARIABLE_LIST", variableList.ToString());
-                fileContents.Replace("PROPERTY_LIST", propertyList.ToString());
-                fileContents.Replace("CLASS_PARAMS_STRING", paramsString.ToString());
-                fileContents.Replace("CLASS_PARAMS_LIST", paramsList.ToString());
+                fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace("PROPERTY_LIST", propertyList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace("CLASS_PARAMS_STRING", paramsString.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace("CLASS_PARAMS_LIST", paramsList.ToString().TrimEnd('\n', '\r'));
 
                 // write the file
                 var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
@@ -277,13 +296,14 @@ namespace net.mkv25.writer
                     var rowParameters = new StringBuilder();
 
                     // populate list of variables
-                    foreach (DataFairySchemaField field in table.Schema.Fields)
+                    foreach (DataFairySchemaField field in table.Schema.AllFields)
                     {
+                        if (rowParameters.Length > 0)
+                            rowParameters.Append(", ");
+
                         // create properties for lookup values
                         if (field.FieldType == "lookup" || field.FieldType == "int" || field.FieldType == "decimal")
                         {
-                            if (rowParameters.Length > 0)
-                                rowParameters.Append(", ");
                             rowParameters.Append(row[field.FieldName].ToString());
                         }
                         else
@@ -301,7 +321,8 @@ namespace net.mkv25.writer
                 fileContents.Replace("PACKAGE_STRING", packageString);
                 fileContents.Replace("ROW_CLASS_NAME", rowClassName);
                 fileContents.Replace("CLASS_NAME", className);
-                fileContents.Replace("ROW_LIST", rowList.ToString());
+                fileContents.Replace("TABLE_NAME", table.TableName);
+                fileContents.Replace("ROW_LIST", rowList.ToString().TrimEnd('\n', '\r'));
 
                 // write the file
                 var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
@@ -355,8 +376,8 @@ namespace net.mkv25.writer
 
             // replace standard set of variables
             ReplaceVariables(fileContents, templateVariables);
-            fileContents.Replace("VARIABLE_LIST", variableList.ToString());
-            fileContents.Replace("CLASS_LIST", classList.ToString());
+            fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
+            fileContents.Replace("CLASS_LIST", classList.ToString().TrimEnd('\n', '\r'));
             fileContents.Replace("PACKAGE_STRING", packageString);
 
             // write the file

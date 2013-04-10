@@ -10,6 +10,15 @@ namespace net.mkv25.DataFairy.VO
     {
         public String TableName;
         public BindingList <DataFairySchemaField> Fields;
+        public BindingList<DataFairySchemaField> AllFields { 
+            get {
+                var list = new BindingList<DataFairySchemaField>();
+                list.Add(new DataFairyIDSchemaField());
+                list.Add(new DataFairyNameSchemaField());
+                list = new BindingList<DataFairySchemaField>(list.Concat(Fields).ToList());
+                return list;
+            }
+        }
 
         public DataFairySchema()
         {

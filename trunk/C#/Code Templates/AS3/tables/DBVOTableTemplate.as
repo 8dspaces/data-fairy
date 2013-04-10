@@ -5,39 +5,48 @@ package PACKAGE_STRING.tables
 
 	public class CLASS_NAME implements IDBVOTable
 	{
-		public var rowList:Vector.<ROW_CLASS_NAME>;
+		protected var _dbvos:IDBVOsModel;
+		protected var _rowList:Vector.<ROW_CLASS_NAME>;
 	
 		public function CLASS_NAME():void
 		{
 		
 		}
-		
-		public static function create(CLASS_PARAMS):CLASS_NAME
-		{
-			var instance:ClassName = new ClassName();
-		
-			CLASS_PARAMS_LIST
-			instance.init();
-		
-			return instance;
-		}
 
-		public function init():void
+		public function init():CLASS_NAME
 		{
-			rowList = new Vector.<ROW_CLASS_NAME>();
+			_rowList = new Vector.<ROW_CLASS_NAME>();
 
 			ROW_LIST
+			
+			return this;
 		}
 
 		public function index(row:IDBVORow):IDBVORow
 		{
-			rowList.push(row);
+			row.dbvos = dbvos;
+			_rowList.push(row);
 			return row;
+		}
+		
+		public function get dbvos():IDBVOsModel
+		{
+			return _dbvos;
+		}
+		
+		public function set dbvos(value:IDBVOsModel):void
+		{
+			_dbvos = value;
 		}
 		
 		public function get tableName():String
 		{
-			return "CLASS_NAME";
+			return "TABLE_NAME";
+		}
+		
+		public function get rowList():Vector.<IDBVORow>
+		{
+			return Vector.<IDBVORow>(_rowList);
 		}
 
 		public function get rowType():Class
@@ -53,6 +62,11 @@ package PACKAGE_STRING.tables
 					return row;
 			}
 			return null;
+		}
+		
+		public function getRowCast(id:int):ROW_CLASS_NAME
+		{
+			return getRow(id) as ROW_CLASS_NAME;
 		}
 	}
 }

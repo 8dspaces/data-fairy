@@ -4,7 +4,7 @@ package PACKAGE_STRING.dbvos
 
 	public class CLASS_NAME implements IDBVORow
 	{
-		public var dbvos:IDBVOsModel;
+		protected var _dbvos:IDBVOsModel;
 		
 		VARIABLE_LIST
 		protected var _id:int;
@@ -14,13 +14,21 @@ package PACKAGE_STRING.dbvos
 			
 		}
 		
-		public static function create(CLASS_PARAMS_STRING):CLASS_NAME
+		public function init(CLASS_PARAMS_STRING):CLASS_NAME
 		{
-			var instance:ClassName = new ClassName();
-		
 			CLASS_PARAMS_LIST
 		
-			return instance;
+			return this;
+		}
+		
+		public function get dbvos():IDBVOsModel
+		{
+			return _dbvos;
+		}
+		
+		public function set dbvos(value:IDBVOsModel):void
+		{
+			_dbvos = value;
 		}
 		
 		public function get id():int
