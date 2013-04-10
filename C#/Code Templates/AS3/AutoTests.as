@@ -12,7 +12,7 @@ package PACKAGE_STRING
 			var model:IDBVOsModel = new DBVOsModel();
 			for each(var table:IDBVOTable in model.tableList)
 			{
-				trace("Table: " + table.tableName);
+				trace("Table: " + table.tableName + ", Rows: " + table.rowList.length);
 			}
 		}
 		

@@ -100,19 +100,21 @@ namespace net.mkv25.writer
                 var fragment = new TemplateFragment();
                 var fragmentName = fragmentNode.Attributes["name"].Value;
                 fragment.fragmentBody = ReadFileContents(templateDirectory + "\\" + fragmentNode.InnerText);
-                
-                if(fragmentName == "LocalAssignment")
-                    template.localAssignmentFragment = fragment;
-                else if(fragmentName == "LocalVariable")
-                    template.localVariableFragment = fragment;
-                else if (fragmentName == "Constant")
-                    template.constantFragment = fragment;
-                else if (fragmentName == "NewClassInstance")
-                    template.newClassInstanceFragment = fragment;
-                else if (fragmentName == "ClassProperty")
+
+                if (fragmentName == "ClassProperty")
                     template.classPropertyFragment = fragment;
                 else if (fragmentName == "ClassVariable")
                     template.classVariableFragment = fragment;
+                else if (fragmentName == "Constant")
+                    template.constantFragment = fragment;
+                else if (fragmentName == "LocalAssignment")
+                    template.localAssignmentFragment = fragment;
+                else if (fragmentName == "LocalVariable")
+                    template.localVariableFragment = fragment;
+                else if (fragmentName == "NewClassInstance")
+                    template.newClassInstanceFragment = fragment;
+                else if (fragmentName == "Parameter")
+                    template.parameterFragment = fragment;
             }
 
             XmlNodeList typeNodes = xml.SelectNodes("/Config/Type");

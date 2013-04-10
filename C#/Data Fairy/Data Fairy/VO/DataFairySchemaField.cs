@@ -33,4 +33,22 @@ namespace net.mkv25.DataFairy.VO
             return schemaField;
         }
     }
+
+    public class DataFairyIDSchemaField : DataFairySchemaField
+    {
+        public DataFairyIDSchemaField()
+        {
+            FieldName = "id";
+            FieldType = "int";
+        }
+    }
+
+    public class DataFairyNameSchemaField : DataFairySchemaField
+    {
+        public DataFairyNameSchemaField()
+        {
+            FieldName = "name";
+            FieldType = "string";
+        }
+    }
 }

@@ -13,12 +13,13 @@
   <EnumerationFileTemplate>enums/DBVOEnumTemplate.as</EnumerationFileTemplate>
 
   <!-- Core fragment templates -->
-  <Fragment name="LocalAssignment">fragments/LocalAssignment.fragment.as</Fragment>
-  <Fragment name="LocalVariable">fragments/LocalVariable.fragment.as</Fragment>
-  <Fragment name="Constant">fragments/Constant.fragment.as</Fragment>
-  <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.as</Fragment>
   <Fragment name="ClassProperty">fragments/ClassProperty.fragment.as</Fragment>
   <Fragment name="ClassVariable">fragments/ClassVariable.fragment.as</Fragment>
+  <Fragment name="Constant">fragments/Constant.fragment.as</Fragment>
+  <Fragment name="LocalAssignment">fragments/LocalAssignment.fragment.as</Fragment>
+  <Fragment name="LocalVariable">fragments/LocalVariable.fragment.as</Fragment>
+  <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.as</Fragment>
+  <Fragment name="Parameter">fragments/Parameter.fragment.as</Fragment>
 
   <!-- Basic types for this language -->
   <Type name="int">int</Type>

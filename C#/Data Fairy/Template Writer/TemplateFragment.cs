@@ -59,5 +59,13 @@ namespace net.mkv25.writer
             s = s.Replace("TYPE", type);
             return s;
         }
+
+        public string WriteParameter(string name, string type)
+        {
+            var s = fragmentBody;
+            s = s.Replace("NAME", name);
+            s = s.Replace("TYPE", type);
+            return s;
+        }
     }
 }
