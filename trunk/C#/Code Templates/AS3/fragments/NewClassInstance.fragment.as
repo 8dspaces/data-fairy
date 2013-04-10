@@ -1,1 +1,1 @@
-index(new CLASS_NAME(PARAMS)) as CLASS_NAME
+index(CLASS_NAME.create(PARAMS)) as CLASS_NAME
