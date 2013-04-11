@@ -33,6 +33,7 @@ namespace Data_Fairy_Editor
                 SchemaCopy = CurrentTable.Schema.Clone();
 
                 tableNameInput.Text = SchemaCopy.TableName;
+                tableNameInput.Focus();
                 dataGridView.AutoGenerateColumns = false;
 
                 // set field name text column
@@ -57,8 +58,7 @@ namespace Data_Fairy_Editor
                 lookupValues.Add(String.Empty);
                 foreach (DataFairyTable table in CurrentFile.Tables)
                 {
-                    if(table != CurrentTable)
-                        lookupValues.Add(table.Schema.TableName);
+                    lookupValues.Add(table.Schema.TableName);
                 }
                 fieldLookUpColumn.DataSource = lookupValues;
                 dataGridView.Columns.Add(fieldLookUpColumn);
