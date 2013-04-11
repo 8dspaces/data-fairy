@@ -39,15 +39,13 @@
             this.tableNamesColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.commandButtonsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.saveButton = new System.Windows.Forms.Button();
-            this.updateButton = new System.Windows.Forms.Button();
             this.newTableButton = new System.Windows.Forms.Button();
+            this.exportButton = new System.Windows.Forms.Button();
             this.editTableButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableFilterInput = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.selectedTableLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.exportButton = new System.Windows.Forms.Button();
             this.commandButtonsPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -74,10 +72,10 @@
             listViewItem8,
             listViewItem9});
             this.tablesListView.LabelWrap = false;
-            this.tablesListView.Location = new System.Drawing.Point(-2, 36);
+            this.tablesListView.Location = new System.Drawing.Point(-2, 0);
             this.tablesListView.MultiSelect = false;
             this.tablesListView.Name = "tablesListView";
-            this.tablesListView.Size = new System.Drawing.Size(200, 548);
+            this.tablesListView.Size = new System.Drawing.Size(200, 533);
             this.tablesListView.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.tablesListView.TabIndex = 0;
             this.tablesListView.UseCompatibleStateImageBehavior = false;
@@ -93,9 +91,8 @@
             // 
             this.commandButtonsPanel.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.commandButtonsPanel.Controls.Add(this.saveButton);
-            this.commandButtonsPanel.Controls.Add(this.updateButton);
-            this.commandButtonsPanel.Controls.Add(this.newTableButton);
             this.commandButtonsPanel.Controls.Add(this.exportButton);
+            this.commandButtonsPanel.Controls.Add(this.newTableButton);
             this.commandButtonsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.commandButtonsPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.commandButtonsPanel.Location = new System.Drawing.Point(200, 533);
@@ -116,19 +113,6 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.onSaveClicked);
             // 
-            // updateButton
-            // 
-            this.updateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateButton.Location = new System.Drawing.Point(567, 5);
-            this.updateButton.Margin = new System.Windows.Forms.Padding(5);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(150, 40);
-            this.updateButton.TabIndex = 6;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
-            this.updateButton.Click += new System.EventHandler(this.onUpdateClick);
-            // 
             // newTableButton
             // 
             this.newTableButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -142,11 +126,24 @@
             this.newTableButton.UseVisualStyleBackColor = true;
             this.newTableButton.Click += new System.EventHandler(this.onNewTableClick);
             // 
+            // exportButton
+            // 
+            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportButton.Location = new System.Drawing.Point(567, 5);
+            this.exportButton.Margin = new System.Windows.Forms.Padding(5);
+            this.exportButton.Name = "exportButton";
+            this.exportButton.Size = new System.Drawing.Size(150, 40);
+            this.exportButton.TabIndex = 8;
+            this.exportButton.Text = "Export Code";
+            this.exportButton.UseVisualStyleBackColor = true;
+            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
+            // 
             // editTableButton
             // 
             this.editTableButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.editTableButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editTableButton.Location = new System.Drawing.Point(727, 4);
+            this.editTableButton.Location = new System.Drawing.Point(927, 5);
             this.editTableButton.Margin = new System.Windows.Forms.Padding(5);
             this.editTableButton.Name = "editTableButton";
             this.editTableButton.Size = new System.Drawing.Size(150, 40);
@@ -159,24 +156,11 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.panel1.Controls.Add(this.tablesListView);
-            this.panel1.Controls.Add(this.tableFilterInput);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 50);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 583);
+            this.panel1.Size = new System.Drawing.Size(200, 533);
             this.panel1.TabIndex = 9;
-            // 
-            // tableFilterInput
-            // 
-            this.tableFilterInput.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.tableFilterInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tableFilterInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableFilterInput.Location = new System.Drawing.Point(3, 3);
-            this.tableFilterInput.Multiline = true;
-            this.tableFilterInput.Name = "tableFilterInput";
-            this.tableFilterInput.Size = new System.Drawing.Size(194, 30);
-            this.tableFilterInput.TabIndex = 10;
-            this.tableFilterInput.Text = "Filter tables...";
             // 
             // dataGridView
             // 
@@ -204,7 +188,7 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView.Location = new System.Drawing.Point(200, 49);
+            this.dataGridView.Location = new System.Drawing.Point(200, 50);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -221,7 +205,7 @@
             dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(2);
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView.RowTemplate.Height = 30;
-            this.dataGridView.Size = new System.Drawing.Size(882, 484);
+            this.dataGridView.Size = new System.Drawing.Size(882, 533);
             this.dataGridView.TabIndex = 10;
             // 
             // selectedTableLabel
@@ -232,7 +216,7 @@
             this.selectedTableLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.selectedTableLabel.Location = new System.Drawing.Point(0, 0);
             this.selectedTableLabel.Name = "selectedTableLabel";
-            this.selectedTableLabel.Size = new System.Drawing.Size(717, 49);
+            this.selectedTableLabel.Size = new System.Drawing.Size(917, 49);
             this.selectedTableLabel.TabIndex = 11;
             this.selectedTableLabel.Text = "No Table Selected";
             // 
@@ -242,38 +226,24 @@
             this.panel2.Controls.Add(this.selectedTableLabel);
             this.panel2.Controls.Add(this.editTableButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(882, 49);
+            this.panel2.Size = new System.Drawing.Size(1082, 50);
             this.panel2.TabIndex = 12;
-            // 
-            // exportButton
-            // 
-            this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportButton.Location = new System.Drawing.Point(247, 5);
-            this.exportButton.Margin = new System.Windows.Forms.Padding(5);
-            this.exportButton.Name = "exportButton";
-            this.exportButton.Size = new System.Drawing.Size(150, 40);
-            this.exportButton.TabIndex = 8;
-            this.exportButton.Text = "Export Code";
-            this.exportButton.UseVisualStyleBackColor = true;
-            this.exportButton.Click += new System.EventHandler(this.exportButton_Click);
             // 
             // EditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 583);
-            this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.commandButtonsPanel);
+            this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "EditorForm";
             this.Text = "Data Fairy Editor";
             this.commandButtonsPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -285,10 +255,8 @@
         private System.Windows.Forms.ListView tablesListView;
         private System.Windows.Forms.FlowLayoutPanel commandButtonsPanel;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button updateButton;
         private System.Windows.Forms.Button editTableButton;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox tableFilterInput;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Button newTableButton;
         private System.Windows.Forms.ColumnHeader tableNamesColumn;

@@ -182,16 +182,26 @@ namespace Data_Fairy_Editor
 
         void schemaForm_RequestDeleteTable()
         {
-            var result = MessageBox.Show(String.Format("Are you sure you want to delete the table {0}? All keys ({1}) and rows ({2}) will be removed.", Schema.CurrentTable.Schema.TableName, Schema.CurrentTable.Schema.Fields.Count, Schema.CurrentTable.Rows.Count),
-                "Delete table... ",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Exclamation);
-
-            if (result == DialogResult.Yes)
+            if (Editor.CurrentFile.Tables.Contains(Schema.CurrentTable.TableName))
             {
-                Schema.Close();
-                Editor.CurrentFile.Tables.Remove(Schema.CurrentTable);
-                Editor.UpdateViews();
+                var result = MessageBox.Show(String.Format("Are you sure you want to delete the table {0}? All keys ({1}) and rows ({2}) will be removed.", Schema.CurrentTable.Schema.TableName, Schema.CurrentTable.Schema.Fields.Count, Schema.CurrentTable.Rows.Count),
+                    "Delete table... ",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Exclamation);
+
+                if (result == DialogResult.Yes)
+                {
+                    Schema.Close();
+                    Editor.CurrentFile.Tables.Remove(Schema.CurrentTable);
+                    Editor.UpdateViews();
+                }
+            }
+            else
+            {
+                MessageBox.Show(String.Format("The table specified does not exist in the data set. No action taken."),
+                     "Delete table... ",
+                     MessageBoxButtons.OK,
+                     MessageBoxIcon.Exclamation);
             }
         }
 
