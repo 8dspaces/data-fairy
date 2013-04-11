@@ -1,14 +1,45 @@
 <?xml version="1.0"?>
 <Config>
+
+  <!-- Meta data -->
   <Name>C# - DBVOs</Name>
   <Author>John Beech</Author>
   <Contact>data.fairy@mkv25.net</Contact>
 
+  <!-- Core template files -->
   <DatabaseFileTemplate>dbvos/DBVOsModel.cs</DatabaseFileTemplate>
-  <ClassFileTemplate>dbvos/DBVOTemplate.cs</ClassFileTemplate>
-  <EnumerationFileTemplate>enums/EnumTemplate.cs</EnumerationFileTemplate>
+  <TableFileTemplate>tables/DBVOTableTemplate.cs</TableFileTemplate>
+  <RowFileTemplate>dbvos/DBVORowTemplate.cs</RowFileTemplate>
+  <EnumerationFileTemplate>enums/DBVOEnumTemplate.cs</EnumerationFileTemplate>
+
+  <!-- Core fragment templates -->
+  <Fragment name="ClassProperty">fragments/ClassProperty.fragment.cs</Fragment>
+  <Fragment name="ClassVariable">fragments/ClassVariable.fragment.cs</Fragment>
+  <Fragment name="Constant">fragments/Constant.fragment.cs</Fragment>
+  <Fragment name="LocalAssignment">fragments/LocalAssignment.fragment.cs</Fragment>
+  <Fragment name="LocalVariable">fragments/LocalVariable.fragment.cs</Fragment>
+  <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.cs</Fragment>
+  <Fragment name="Parameter">fragments/Parameter.fragment.cs</Fragment>
+
+  <!-- Basic types for this language -->
+  <Type name="int">int</Type>
+  <Type name="string">string</Type>
+  <Type name="decimal">Decimal</Type>
+  
+  <!-- Naming options -->
+  <Variable name="RowSuffix">Row</Variable>
+  <Variable name="TableSuffix">Table</Variable>
+  <Variable name="EnumSuffix">Enum</Variable>
+  
+  <!-- Supporting package files -->
+  <PackageFile>AutoTests.cs</PackageFile>
   <PackageFile>interfaces/IDBVOsModel.cs</PackageFile>
-  <PackageFile>interfaces/IDBVO.cs</PackageFile>
   <PackageFile>interfaces/IDBVOEnum.cs</PackageFile>
+  <PackageFile>interfaces/IDBVOTable.cs</PackageFile>
+  <PackageFile>interfaces/IDBVORow.cs</PackageFile>
+
+  <!-- Package generation options -->
   <PackageSeperator>.</PackageSeperator>
+  <GeneratePackageFolderStructure>false</GeneratePackageFolderStructure>
+
 </Config>
