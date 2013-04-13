@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Config>
+  <Name>Haxe - DBVOs</Name>
+  <Author>John Beech</Author>
+  <Contact>data.fairy@mkv25.net</Contact>
+
+  <DatabaseFileTemplate>dbvos/DBVOsModel.hx</DatabaseFileTemplate>
+  <ClassFileTemplate>dbvos/DBVOTemplate.hx</ClassFileTemplate>
+  <EnumerationFileTemplate>enums/EnumTemplate.hx</EnumerationFileTemplate>
+  <PackageFile>interfaces/IDBVOsModel.hx</PackageFile>
+  <PackageFile>interfaces/IDBVO.hx</PackageFile>
+  <PackageFile>interfaces/IDBVOEnum.hx</PackageFile>
+  <PackageSeperator>.</PackageSeperator>
+</Config>

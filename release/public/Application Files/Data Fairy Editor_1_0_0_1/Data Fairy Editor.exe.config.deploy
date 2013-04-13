@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="Data_Fairy_Editor.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <userSettings>
+        <Data_Fairy_Editor.Properties.Settings>
+            <setting name="CodeExportOutputPath" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="CodeExportPackage" serializeAs="String">
+                <value>net.mkv25.DataFairy</value>
+            </setting>
+            <setting name="CodeExportType" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="EditorLastOpenedFile" serializeAs="String">
+                <value />
+            </setting>
+        </Data_Fairy_Editor.Properties.Settings>
+    </userSettings>
+</configuration>
