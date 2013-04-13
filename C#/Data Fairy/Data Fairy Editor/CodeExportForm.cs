@@ -61,6 +61,7 @@ namespace Data_Fairy_Editor
             // scan the directory
             var directoryList = Directory.EnumerateDirectories(templatesPath);
             var options = new List<KeyValuePair<string, TemplateWriter>>();
+            options.Add(new KeyValuePair<string,TemplateWriter>("No template selected", null));
             foreach (var item in directoryList)
             {
                 TemplateWriter template = TemplateWriterConfig.LoadFromDirectory(item);
@@ -93,6 +94,12 @@ namespace Data_Fairy_Editor
         private void exportButton_Click(object sender, EventArgs e)
         {
             var template = (TemplateWriter)templateComboBox.SelectedValue;
+
+            if (template == null)
+            {
+                reportBox.Text = "No template selected";
+                return;
+            }
 
             exportTimer = new Stopwatch();
             exportTimer.Start();

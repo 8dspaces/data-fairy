@@ -6,7 +6,7 @@ using System.Data;
 
 using PACKAGE_STRING.interfaces;
 
-namespace PACKAGE_STRING.dbvos;
+namespace PACKAGE_STRING.dbvos
 {
 	public class CLASS_NAME : IDBVORow
 	{
@@ -27,13 +27,13 @@ namespace PACKAGE_STRING.dbvos;
 			return this;
 		}
 		
-		public IDBVOsModel dbvos()
+		public IDBVOsModel dbvos
 		{
 			get { return _dbvos; }
 			set { _dbvos = value; }
 		}
 		
-		public int get id()
+		public int id
 		{
 			get { return _id; }
 			set { _id = value; }

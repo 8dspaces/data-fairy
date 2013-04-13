@@ -1,13 +1,16 @@
-package PACKAGE_STRING.interfaces
+using System;
+using System.Data;
+using System.Collections.Generic;
+
+namespace PACKAGE_STRING.interfaces
 {
 	public interface IDBVOTable
 	{
-		function get dbvos():IDBVOsModel;
-		function set dbvos(value:IDBVOsModel):void;
+		IDBVOsModel dbvos { get; set; }
 		
-		function get tableName():String;
-		function get rowList():Vector.<IDBVORow>;
-		function get rowType():Class;
-		function getRow(id:int):IDBVORow;
+		string tableName { get; }
+		List<IDBVORow> rowList { get; }
+		Type rowType { get; }
+		IDBVORow getRow(int id);
 	}
 }
