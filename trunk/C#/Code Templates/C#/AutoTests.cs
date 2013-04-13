@@ -1,20 +1,17 @@
-package PACKAGE_STRING
+using PACKAGE_STRING.dbvos;
+using PACKAGE_STRING.interfaces;
+
+namespace PACKAGE_STRING
 {
-	import flash.display.Sprite;
-	import PACKAGE_STRING.dbvos.DBVOsModel;
-	import PACKAGE_STRING.interfaces.IDBVOsModel;
-	import PACKAGE_STRING.interfaces.IDBVOTable;
-	
-	public class AutoTests extends Sprite
+	public class AutoTests
 	{
-		public function AutoTests() 
+		public static void Main(string[] args)
 		{
-			var model:IDBVOsModel = new DBVOsModel();
-			for each(var table:IDBVOTable in model.tableList)
+			IDBVOsModel model = new DBVOsModel();
+			foreach(IDBVOTable table in model.tableList)
 			{
-				trace("Table: " + table.tableName + ", Rows: " + table.rowList.length);
+				System.Console.WriteLine("Table: " + table.tableName + ", Rows: " + table.rowList.Count);
 			}
 		}
-		
 	}
 }

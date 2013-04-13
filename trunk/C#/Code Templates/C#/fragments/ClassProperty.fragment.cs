@@ -1,14 +1,15 @@
-		protected var _NAME:TYPE; // cached lookup value
-		public function get NAME():TYPE
+		protected TYPE _NAME; // cached lookup value
+		public TYPE NAME
 		{
-			if(!_NAME)
-				_NAME = dbvos.retrieve(NAMEId, TYPE) as TYPE;
-			return _NAME;
-		}
-		
-		public function set NAME(value:TYPE):void
-		{
-			// overrides cached value
-			_NAME = value;
+			get {
+				if(_NAME == null)
+					_NAME = dbvos.retrieve(NAMEId, typeof(TYPE)) as TYPE;
+				return _NAME;
+			}
+			set 
+			{
+				// overrides cached value
+				_NAME = value;
+			}
 		}
 		

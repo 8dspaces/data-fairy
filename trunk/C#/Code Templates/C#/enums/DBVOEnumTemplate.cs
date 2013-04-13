@@ -1,8 +1,8 @@
-package PACKAGE_STRING.enums
+namespace PACKAGE_STRING.enums
 {
-	import PACKAGE_STRING.interfaces.*;
+	using PACKAGE_STRING.interfaces;
 
-	public class CLASS_NAME implements IDBVOEnum
+	public class CLASS_NAME : IDBVOEnum
 	{
 		VARIABLE_LIST
 	}

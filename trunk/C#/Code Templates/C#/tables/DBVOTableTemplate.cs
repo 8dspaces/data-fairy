@@ -1,62 +1,64 @@
-package PACKAGE_STRING.tables
-{
-	import PACKAGE_STRING.interfaces.*;
-	import PACKAGE_STRING.dbvos.ROW_CLASS_NAME;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
 
-	public class CLASS_NAME implements IDBVOTable
+using PACKAGE_STRING.interfaces;
+using PACKAGE_STRING.dbvos;
+
+namespace PACKAGE_STRING.tables
+{
+	public class CLASS_NAME : IDBVOTable
 	{
-		protected var _dbvos:IDBVOsModel;
-		protected var _rowList:Vector.<ROW_CLASS_NAME>;
+		protected IDBVOsModel _dbvos;
+		protected List<ROW_CLASS_NAME> _rowList;
 	
-		public function CLASS_NAME(dbvos:IDBVOsModel):void
+		public CLASS_NAME(IDBVOsModel dbvos)
 		{
 			_dbvos = dbvos;
 		}
 
-		public function init():CLASS_NAME
+		public CLASS_NAME init()
 		{
-			_rowList = new Vector.<ROW_CLASS_NAME>();
+			_rowList = new List<ROW_CLASS_NAME>();
 
 			ROW_LIST
 			
 			return this;
 		}
 
-		public function index(row:IDBVORow):IDBVORow
+		public IDBVORow index(IDBVORow row)
 		{
 			row.dbvos = dbvos;
-			_rowList.push(row);
+			_rowList.Add((ROW_CLASS_NAME)(row));
 			return row;
 		}
 		
-		public function get dbvos():IDBVOsModel
+		public IDBVOsModel dbvos
 		{
-			return _dbvos;
+			get { return _dbvos; }
+			set { _dbvos = value; }
 		}
 		
-		public function set dbvos(value:IDBVOsModel):void
+		public string tableName
 		{
-			_dbvos = value;
+			get { return "TABLE_NAME"; }
 		}
 		
-		public function get tableName():String
+		public List<IDBVORow> rowList
 		{
-			return "TABLE_NAME";
-		}
-		
-		public function get rowList():Vector.<IDBVORow>
-		{
-			return Vector.<IDBVORow>(_rowList);
+			get { return new List<IDBVORow>(_rowList.Cast<IDBVORow>()); }
 		}
 
-		public function get rowType():Class
+		public Type rowType
 		{
-			return ROW_CLASS_NAME;
+			get { return typeof(ROW_CLASS_NAME); }
 		}
 		
-		public function getRow(id:int):IDBVORow
+		public IDBVORow getRow(int id)
 		{
-			for each(var row:IDBVORow in rowList)
+			foreach(IDBVORow row in rowList)
 			{
 				if(row.id == id)
 					return row;
@@ -64,9 +66,9 @@ package PACKAGE_STRING.tables
 			return null;
 		}
 		
-		public function getRowCast(id:int):ROW_CLASS_NAME
+		public ROW_CLASS_NAME getRowCast(int id)
 		{
-			return getRow(id) as ROW_CLASS_NAME;
+			return (ROW_CLASS_NAME)(getRow(id));
 		}
 	}
 }

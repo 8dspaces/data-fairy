@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-import PACKAGE_STRING.interfaces.*;
-import PACKAGE_STRING.tables.*;
+using PACKAGE_STRING.interfaces;
+using PACKAGE_STRING.tables;
 	
 namespace PACKAGE_STRING.dbvos
 {
@@ -40,7 +40,7 @@ namespace PACKAGE_STRING.dbvos
 		protected IDBVOTable index(IDBVOTable table)
 		{
 			table.dbvos = this;
-			_tableList.push(table);
+			_tableList.Add(table);
 			return table;
 		}
 		
@@ -51,7 +51,7 @@ namespace PACKAGE_STRING.dbvos
 		}
 		
 		/** Have the tables for this model been initialised yet */
-		public bool loaded()
+		public bool loaded
 		{
 			get { return _loaded; }
 		}

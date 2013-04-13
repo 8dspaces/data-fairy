@@ -1,9 +1,13 @@
-package PACKAGE_STRING.interfaces
+using System;
+using System.Data;
+using System.Collections.Generic;
+
+namespace PACKAGE_STRING.interfaces
 {
 	public interface IDBVOsModel
 	{
-		function get tableList():Vector.<IDBVOTable>;
-		function get loaded():Boolean;
-		function retrieve(id:int, type:Class):IDBVORow;
+		List<IDBVOTable> tableList { get; }
+		bool loaded { get; }
+		IDBVORow retrieve(int id, Type type);
 	}
 }
