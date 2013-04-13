@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>C:\Users\Markavian\Work\Common\data-fairy-releases\public\</PublishUrlHistory>
-    <InstallUrlHistory />
-    <SupportUrlHistory />
-    <UpdateUrlHistory />
+    <PublishUrlHistory>C:\Users\Markavian\Work\Common\data-fairy-releases\public\|http://data-fairy.googlecode.com/svn/release/public/</PublishUrlHistory>
+    <InstallUrlHistory>http://data-fairy.googlecode.com/svn/release/public/</InstallUrlHistory>
+    <SupportUrlHistory>https://code.google.com/p/data-fairy/</SupportUrlHistory>
+    <UpdateUrlHistory>http://data-fairy.googlecode.com/svn/release/public/</UpdateUrlHistory>
     <BootstrapperUrlHistory />
-    <ErrorReportUrlHistory />
+    <ErrorReportUrlHistory>https://code.google.com/p/data-fairy/</ErrorReportUrlHistory>
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
