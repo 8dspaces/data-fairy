@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Data Fairy Editor.exe" version="1.0.0.2" publicKeyToken="5b9d65de5a1577c3" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="Resources\data fairy.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Data Fairy Editor" version="1.0.0.0" publicKeyToken="12ABBABA262E4203" language="neutral" processorArchitecture="x86" />
+    <commandLine file="Data Fairy Editor.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+            If you want to change the Windows User Account Control level replace the 
+            requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel node will disable file and registry virtualization.
+            If you want to utilize File and Registry Virtualization for backward 
+            compatibility then delete the requestedExecutionLevel node.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data Fairy Editor.exe" size="205312">
+      <assemblyIdentity name="Data Fairy Editor" version="1.0.0.0" publicKeyToken="12ABBABA262E4203" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>zZ/5cH8e6LAFq9oj2+naCVzjZRs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Data Fairy IO.dll" size="13312">
+      <assemblyIdentity name="Data Fairy IO" version="1.0.0.0" publicKeyToken="12ABBABA262E4203" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>gSpx/758CTRmRWN4MWZynAMibmE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Template Writer.dll" size="19968">
+      <assemblyIdentity name="Template Writer" version="1.0.0.0" publicKeyToken="12ABBABA262E4203" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>3wYYNTgpR1ZCchvJYK14qP/Ms+Y=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Code Templates\AS3\AutoTests.as" size="482">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7NznG9ZwpU9/E12eidTbe1tRRAI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\dbvos\DBVORowTemplate.as" size="730">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>G/+MXwELAPVxgQgI6lgKBTpxjrY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\dbvos\DBVOsModel.as" size="1478">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8ait0cJhkofVe+RlUfWIEJOXWVs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\enums\DBVOEnumTemplate.as" size="146">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GJNZ/iCKETQYhDg4GALtExE2hjs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\fragments\ClassProperty.fragment.as" size="291">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>5CoD+kouAHvcrPnPuwhNdbdnnjw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\fragments\ClassVariable.fragment.as" size="22">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>q/ExRWEmu6pjrWYBCve0DvxmDNQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\fragments\Constant.fragment.as" size="40">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ie8tg9TS/eiPkmyWSZp9OPUMpbQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\fragments\LocalAssignment.fragment.as" size="16">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>xXD13p6ot3zGC1hIT9Q18j+V8Uk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\fragments\LocalVariable.fragment.as" size="25">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>jUarlins2HAI3tRKon0sQzE4yjA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\fragments\NewClassInstance.fragment.as" size="55">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>On/0/jpOuYuZVQxs9yxXftvvTVU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\fragments\Parameter.fragment.as" size="9">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Th+164MldILjRxthNh94cZ/CQmY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\interfaces\IDBVOEnum.as" size="80">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>slJQqc6TirNlbYf1gzaD/kTX0LA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\interfaces\IDBVORow.as" size="225">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>v31M0FYOn1j9ikLYwAAMSYtiziw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\interfaces\IDBVOsModel.as" size="212">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EtlYv3j28e5NddtolzKcJtM7cuU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\interfaces\IDBVOTable.as" size="316">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8Ped28emkYhQuBeKcDBtlpzoep4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\tables\DBVOTableTemplate.as" size="1310">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>U0ChU2OiyjpmxnD39zgWEV3pnaQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\AS3\TemplateConfig_AS3.xml" size="1690" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Nt4jN6EjfM6O/JEGR9PvWBLNRWM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\AutoTests.cs" size="378">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>V6ex9C6LJqr0TMsoZ8RBW3zpLbo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\dbvos\DBVORowTemplate.cs" size="679">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>W2fYR/g9fOGadwDM+Hp2ybBRjaw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\dbvos\DBVOsModel.cs" size="1459">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>kGPjE8LA0Ry1zXj3csmy7xHXDbI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\enums\DBVOEnumTemplate.cs" size="136">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Rfd9qVQSotMlmEJwxThkhDiha/g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\fragments\ClassProperty.fragment.cs" size="270">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OHhbmJ6M2YLn6xO7LpssePeNvK4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\fragments\ClassVariable.fragment.cs" size="18">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ITTJRR2sPFGKbfUPIQKBe/Tm6uA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\fragments\Constant.fragment.cs" size="33">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>MB7oOLZOgkoyXolNVaIRuowkoq8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\fragments\LocalAssignment.fragment.cs" size="16">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>xXD13p6ot3zGC1hIT9Q18j+V8Uk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\fragments\LocalVariable.fragment.cs" size="21">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>08yKJyJtiBO6p8gAw61lez3/5sY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\fragments\NewClassInstance.fragment.cs" size="53">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>rVpiqIsKFfyfCuMHLdVM78P+4xE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\fragments\Parameter.fragment.cs" size="9">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>vWglCb2ztIdZkbn/TK97lP6ePGE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\interfaces\IDBVOEnum.cs" size="154">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IJSSOa8e2OVYWMLvEvwT10JAPYU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\interfaces\IDBVORow.cs" size="208">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BcjWiKeqdred2QAiokTZNbvZLlM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\interfaces\IDBVOsModel.cs" size="256">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oCkABJd8CJrbiYlKTskqe7y9aLQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\interfaces\IDBVOTable.cs" size="307">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>zGDkcU8FFS/yX8/UN+200+19mLg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\tables\DBVOTableTemplate.cs" size="1277">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZqufnPbzQE3bTKJ2pJYUwcAUdIU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\C#\TemplateConfig_C#.xml" size="1863" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>gOc1hWN1ZC9BP65T0PT96Fo4+M4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\TemplateConfig_Haxe.xml" size="557" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>DTm57kBABCvTwsFMSKuC+ln7TyA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\TemplateConfig_PHP.xml" size="736" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EbR7YPUgV8xHk3xxj0ZL5dqaJso=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\readme.txt" size="2999">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>T/OWi3/pijd/zDk9i48cvkBIsMM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Data Fairy Editor.exe.config" size="1222">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>QhN5t/oUuyNUnl+CsXx57ZFohZ0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\data fairy.ico" size="42003">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HeMWRRuAvDC0JQ0ROPZuYuXR9e0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of all Windows versions that this application is designed to work with. Windows will automatically select the most compatible environment.-->
+      <!-- If your application is designed to work with Windows 7, uncomment the following supportedOS node-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=CHII\Markavian" issuerKeyHash="02b3c1c6eb6472bf27b1b1266439de54681f07bc" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>3w3BRBPlRT2plJc/8JCLUik2mRE=</DigestValue></Reference></SignedInfo><SignatureValue>HOn+NIoD/yNcVZjsoaIeLNcgLTWmOhRGxVLDd485KBkr52A0IVZIY4I59WjOXTJSAkkM7Z9HyMNXIPeVulPxMhrRaf1sXtG2m3WKV8W5D/4OUMM3uV8fPaJcatzjxol7vG6/ZcGgl8J62ZytLMtzoaZlUPmIepHzkj6ql8iAPg4=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>mGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="11993629528b90f03f9794a93d45e51344c10ddf" Description="" Url=""><as:assemblyIdentity name="Data Fairy Editor.exe" version="1.0.0.2" publicKeyToken="5b9d65de5a1577c3" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=CHII\Markavian</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>2qSpoJ8yMC/eXG1bdK6jaEpj8AI=</DigestValue></Reference></SignedInfo><SignatureValue>FD9GTA9gpdN346/zsz0g8jkohIOCepPsnQxBE7n0EBPzOsCv96wS+R6V9roJ0irLuj3v2K3VAyDt42WYiZuL2TvipjuuVSofEeGJ3/kEv/s4ADm84J/+3eaUCjSmu8S/XkVN5bRm2iIMogoixIKjuCQvgwN0eUrpaTbL4uGgmhk=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>mGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQeU1t6JOpe65ODKXGw1IrLjANBgkqhkiG9w0BAQUFADAnMSUwIwYDVQQDHhwAQwBIAEkASQBcAE0AYQByAGsAYQB2AGkAYQBuMB4XDTEzMDQxMzE2MDI0MVoXDTE0MDQxMzIyMDI0MVowJzElMCMGA1UEAx4cAEMASABJAEkAXABNAGEAcgBrAGEAdgBpAGEAbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAmGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOECAwEAATANBgkqhkiG9w0BAQUFAAOBgQBbTu7mSKHKNvlyVISjflPL3KsHHyLUOeUEEOSFoBUI/sXiHaJ65TI4w8lOK2EGNIDRCa9Xveb8ehz4xY7jEy7jtOYUIQm29f5eb0iO2j5JAb0N373InDQNgGlaXWPAP3TwLK0nKmqJ6h7x07MKQP6bgqhgIBOX+FyRil2MZ/FqgQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
