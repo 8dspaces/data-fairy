@@ -17,6 +17,8 @@ namespace Data_Fairy_Editor
         {
             InitializeComponent();
 
+            this.Icon = Icons.data_fairy;
+
             var releaseChanges = new List<string>();
             releaseChanges.Add("Release 1.0 Schema Editing Tool and Code Generation");
 
@@ -24,6 +26,8 @@ namespace Data_Fairy_Editor
             foreach (var line in releaseChanges)
                 builder.AppendLine(line);
             releaseInfoLabel.Text = builder.ToString();
+            
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
 
         public event UIEventHandler RequestNewFile;

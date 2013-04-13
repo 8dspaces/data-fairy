@@ -68,7 +68,7 @@
             this.packageTextInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.packageTextInput.Location = new System.Drawing.Point(169, 51);
             this.packageTextInput.Name = "packageTextInput";
-            this.packageTextInput.Size = new System.Drawing.Size(283, 26);
+            this.packageTextInput.Size = new System.Drawing.Size(363, 26);
             this.packageTextInput.TabIndex = 3;
             // 
             // commandButtonsPanel
@@ -77,16 +77,16 @@
             this.commandButtonsPanel.Controls.Add(this.exportButton);
             this.commandButtonsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.commandButtonsPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.commandButtonsPanel.Location = new System.Drawing.Point(0, 231);
+            this.commandButtonsPanel.Location = new System.Drawing.Point(0, 371);
             this.commandButtonsPanel.Name = "commandButtonsPanel";
-            this.commandButtonsPanel.Size = new System.Drawing.Size(464, 50);
+            this.commandButtonsPanel.Size = new System.Drawing.Size(544, 50);
             this.commandButtonsPanel.TabIndex = 15;
             // 
             // exportButton
             // 
             this.exportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportButton.Location = new System.Drawing.Point(309, 5);
+            this.exportButton.Location = new System.Drawing.Point(389, 5);
             this.exportButton.Margin = new System.Windows.Forms.Padding(5);
             this.exportButton.Name = "exportButton";
             this.exportButton.Size = new System.Drawing.Size(150, 40);
@@ -112,14 +112,14 @@
             this.outputDirectoryInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputDirectoryInput.Location = new System.Drawing.Point(169, 88);
             this.outputDirectoryInput.Name = "outputDirectoryInput";
-            this.outputDirectoryInput.Size = new System.Drawing.Size(209, 26);
+            this.outputDirectoryInput.Size = new System.Drawing.Size(289, 26);
             this.outputDirectoryInput.TabIndex = 17;
             // 
             // browseButton
             // 
             this.browseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.browseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.browseButton.Location = new System.Drawing.Point(384, 89);
+            this.browseButton.Location = new System.Drawing.Point(464, 89);
             this.browseButton.Name = "browseButton";
             this.browseButton.Size = new System.Drawing.Size(68, 25);
             this.browseButton.TabIndex = 18;
@@ -135,7 +135,7 @@
             this.templateComboBox.FormattingEnabled = true;
             this.templateComboBox.Location = new System.Drawing.Point(169, 12);
             this.templateComboBox.Name = "templateComboBox";
-            this.templateComboBox.Size = new System.Drawing.Size(283, 28);
+            this.templateComboBox.Size = new System.Drawing.Size(363, 28);
             this.templateComboBox.TabIndex = 0;
             // 
             // reportBox
@@ -151,7 +151,7 @@
             this.reportBox.Name = "reportBox";
             this.reportBox.ReadOnly = true;
             this.reportBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.reportBox.Size = new System.Drawing.Size(440, 95);
+            this.reportBox.Size = new System.Drawing.Size(520, 235);
             this.reportBox.TabIndex = 19;
             this.reportBox.Text = "Output report";
             this.reportBox.WordWrap = false;
@@ -160,7 +160,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 281);
+            this.ClientSize = new System.Drawing.Size(544, 421);
             this.Controls.Add(this.reportBox);
             this.Controls.Add(this.browseButton);
             this.Controls.Add(this.outputDirectoryInput);

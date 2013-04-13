@@ -58,6 +58,11 @@
     <Compile Include="EditorForm.Designer.cs">
       <DependentUpon>EditorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Icons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons.resx</DependentUpon>
+    </Compile>
     <Compile Include="SchemaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +83,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditorForm.resx">
       <DependentUpon>EditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="SchemaForm.resx">
       <DependentUpon>SchemaForm.cs</DependentUpon>
@@ -116,6 +125,24 @@
       <Project>{017E8664-2CAD-4C62-901B-C642E9974884}</Project>
       <Name>Data Fairy Template Writer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data fairy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\daisy small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data fairy star.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data fairy wand.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Daisy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\daisy the data fairy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
