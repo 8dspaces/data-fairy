@@ -12,6 +12,7 @@ using Microsoft.Win32;
 using Data_Fairy_Editor.Properties;
 using System.Diagnostics;
 using net.mkv25.DataFairy.VO;
+using System.Deployment.Application;
 
 namespace Data_Fairy_Editor
 {
@@ -37,16 +38,25 @@ namespace Data_Fairy_Editor
         private void LoadTemplateList()
         {
             string templatesPath = null;
+            var warnings = new StringBuilder();
 
             // clear down warnings
             if (TemplateWriterConfig.Warnings != null)
                 TemplateWriterConfig.Warnings.Clear();
 
             // find code templates directory
-            if (Directory.Exists("./Code Templates"))
-                templatesPath = "./Code Templates";
-            else if (Directory.Exists("../../../../Code Templates"))
-                templatesPath = "../../../../Code Templates";
+            if (Directory.Exists("Code Templates"))
+            {
+                templatesPath = "Code Templates";
+                warnings.AppendLine("Using standard local path:");
+                warnings.AppendLine(templatesPath);
+            }
+            else if (Directory.Exists(ApplicationDeployment.CurrentDeployment.DataDirectory))
+            {
+                templatesPath = ApplicationDeployment.CurrentDeployment.DataDirectory;
+                warnings.AppendLine("Using application deployment path:");
+                warnings.AppendLine(templatesPath);
+            }
 
             // tell the user if there's no path
             if (String.IsNullOrEmpty(templatesPath))
@@ -83,14 +93,13 @@ namespace Data_Fairy_Editor
             // report any warnings
             if (TemplateWriterConfig.Warnings != null)
             {
-                var warnings = new StringBuilder();
                 warnings.AppendLine("Errors occurred while loading templates:");
                 foreach (var warning in TemplateWriterConfig.Warnings)
                 {
                     warnings.AppendLine(warning);
                 }
-                reportBox.Text = warnings.ToString();
             }
+            reportBox.Text = warnings.ToString();
         }
 
         private void exportButton_Click(object sender, EventArgs e)

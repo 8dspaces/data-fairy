@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Data Fairy Editor")]
 [assembly: AssemblyDescription("An XML Relational Table Editor with code generation!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("mkv25.net")]
 [assembly: AssemblyProduct("Data Fairy")]
-[assembly: AssemblyCopyright("Copyright © John Beech 2013")]
+[assembly: AssemblyCopyright("Copyright © mkv25.net 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
