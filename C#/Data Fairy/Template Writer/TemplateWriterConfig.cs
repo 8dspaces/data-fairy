@@ -51,15 +51,24 @@ namespace net.mkv25.writer
 
             XmlNode nameNode = xml.SelectSingleNode("/Config/Name");
             if (nameNode != null)
+            {
                 template.name = nameNode.InnerText;
+                template.AddTemplateVariable("TEMPLATE_NAME", template.name);
+            }
 
             XmlNode authorNode = xml.SelectSingleNode("/Config/Author");
             if (authorNode != null)
+            {
                 template.author = authorNode.InnerText;
+                template.AddTemplateVariable("TEMPLATE_AUTHOR", template.name);
+            }
 
             XmlNode contactNode = xml.SelectSingleNode("/Config/Contact");
             if (contactNode != null)
+            {
                 template.contact = contactNode.InnerText;
+                template.AddTemplateVariable("TEMPLATE_CONTACT", template.name);
+            }
 
             XmlNode databaseFileTemplateNode = xml.SelectSingleNode("/Config/DatabaseFileTemplate");
             if (databaseFileTemplateNode != null)
@@ -93,6 +102,10 @@ namespace net.mkv25.writer
             XmlNode generatePackageFolderStructureNode = xml.SelectSingleNode("/Config/GeneratePackageFolderStructure");
             if(generatePackageFolderStructureNode != null)
                 template.generatePackageFolderStructure = (generatePackageFolderStructureNode.InnerText == "true");
+
+            XmlNode forceLowercasePackageStructureNode = xml.SelectSingleNode("/Config/ForceLowercasePackageStructure");
+            if (forceLowercasePackageStructureNode != null)
+                template.forceLowercasePackageStructure = (forceLowercasePackageStructureNode.InnerText == "true");
 
             XmlNodeList fragmentNodes = xml.SelectNodes("/Config/Fragment");
             foreach (XmlNode fragmentNode in fragmentNodes)

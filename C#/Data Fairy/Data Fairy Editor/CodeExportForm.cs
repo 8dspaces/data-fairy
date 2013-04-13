@@ -133,7 +133,7 @@ namespace Data_Fairy_Editor
             if (template != null)
             {
                 template.sourceDataSet = SourceDataSet;
-                template.packageString = packageTextInput.Text;
+                template.PackageString = packageTextInput.Text;
                 template.WriteTo(outputDirectoryInput.Text);
 
                 foreach(var message in template.logMessages)

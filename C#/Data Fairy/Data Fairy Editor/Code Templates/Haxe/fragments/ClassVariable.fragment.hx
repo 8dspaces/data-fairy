@@ -1,0 +1,1 @@
+	SCOPE var NAME:TYPE;
