@@ -47,10 +47,13 @@ namespace net.mkv25.writer
         public List<KeyValuePair<DateTime, string>> logMessages;
 
         /** The seperator to use between generated package paths */
-        public string packageSeperator;
+        public string packageSeperator = ".";
 
         /** Should the code template generate folders that match the package structure */
-        public bool generatePackageFolderStructure;
+        public bool generatePackageFolderStructure = false;
+
+        /** Should the package name be forced to lowercase for a given template */
+        public bool forceLowercasePackageStructure = false;
 
         /** A fragment for writing new class properties */
         public TemplateFragment classPropertyFragment;
@@ -74,11 +77,34 @@ namespace net.mkv25.writer
         public TemplateFragment parameterFragment;
         
         /** The package path to use for code generation */
-        public string packageString;
+        protected string _packageString;
 
         public TemplateWriter()
         {
             templateVariables = new List<KeyValuePair<string, string>>();
+        }
+
+        /** The package path for code generation, including the modifier for lowercase mode */
+        public string PackageString 
+        {
+            get
+            {
+                if (forceLowercasePackageStructure)
+                {
+                    return _packageString.ToLower();
+                }
+                return _packageString;
+            }
+            set
+            {
+                _packageString = value;
+            }
+        }
+
+        /** Add a template variable to be searched and replaced */
+        public void AddTemplateVariable(string key, string value)
+        {
+            templateVariables.Add(new KeyValuePair<string, string>(key, value));
         }
 
         /** Lookup function to convert local type in to language specific type */
@@ -122,7 +148,7 @@ namespace net.mkv25.writer
             if (generatePackageFolderStructure)
             {
                 var packagePath = new StringBuilder();
-                var packagePathArray = packageString.Split(packageSeperator.ToCharArray());
+                var packagePathArray = PackageString.Split(packageSeperator.ToCharArray());
                 foreach (var packagePart in packagePathArray)
                 {
                     packagePath.Append(packagePart + "\\");
@@ -170,7 +196,7 @@ namespace net.mkv25.writer
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, templateVariables);
-                fileContents.Replace("PACKAGE_STRING", packageString);
+                fileContents.Replace("PACKAGE_STRING", PackageString);
                 fileContents.Replace("CLASS_NAME", className);
                 fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
 
@@ -250,7 +276,7 @@ namespace net.mkv25.writer
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, templateVariables);
-                fileContents.Replace("PACKAGE_STRING", packageString);
+                fileContents.Replace("PACKAGE_STRING", PackageString);
                 fileContents.Replace("CLASS_NAME", className);
                 fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
                 fileContents.Replace("PROPERTY_LIST", propertyList.ToString().TrimEnd('\n', '\r'));
@@ -322,7 +348,7 @@ namespace net.mkv25.writer
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, templateVariables);
-                fileContents.Replace("PACKAGE_STRING", packageString);
+                fileContents.Replace("PACKAGE_STRING", PackageString);
                 fileContents.Replace("ROW_CLASS_NAME", rowClassName);
                 fileContents.Replace("CLASS_NAME", className);
                 fileContents.Replace("TABLE_NAME", table.TableName);
@@ -382,7 +408,7 @@ namespace net.mkv25.writer
             ReplaceVariables(fileContents, templateVariables);
             fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
             fileContents.Replace("CLASS_LIST", classList.ToString().TrimEnd('\n', '\r'));
-            fileContents.Replace("PACKAGE_STRING", packageString);
+            fileContents.Replace("PACKAGE_STRING", PackageString);
 
             // write the file
             var filePath = outputDirectory + "\\" + dataBaseFileTemplate.FileName;
@@ -408,7 +434,7 @@ namespace net.mkv25.writer
 
                 // build the file contents
                 ReplaceVariables(fileContents, templateVariables);
-                fileContents.Replace("PACKAGE_STRING", packageString);
+                fileContents.Replace("PACKAGE_STRING", PackageString);
 
                 // write the file
                 var filePath = outputDirectory + "\\" + fileName;

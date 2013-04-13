@@ -36,5 +36,6 @@
   <!-- Package generation options -->
   <PackageSeperator>.</PackageSeperator>
   <GeneratePackageFolderStructure>true</GeneratePackageFolderStructure>
+  <ForceLowercasePackageStructure>false</ForceLowercasePackageStructure>
 
 </Config>
