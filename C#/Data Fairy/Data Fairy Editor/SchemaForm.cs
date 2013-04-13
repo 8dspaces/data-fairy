@@ -24,6 +24,8 @@ namespace Data_Fairy_Editor
         public SchemaForm()
         {
             InitializeComponent();
+
+            this.Icon = Icons.data_fairy;
         }
 
         public void UpdateView()

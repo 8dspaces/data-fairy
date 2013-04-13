@@ -26,6 +26,8 @@ namespace Data_Fairy_Editor
         {
             InitializeComponent();
 
+            this.Icon = Icons.data_fairy_star;
+
             outputDirectoryInput.Text = (string) Settings.Default["CodeExportOutputPath"];
             packageTextInput.Text = (string) Settings.Default["CodeExportPackage"];
 

@@ -341,6 +341,12 @@
         <box>1</box>
         <amount>5</amount>
       </Row>
+      <Row>
+        <id>1</id>
+        <name>Wooden Crate</name>
+        <box>0</box>
+        <amount>5</amount>
+      </Row>
     </Table>
   </Tables>
 </Data>

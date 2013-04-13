@@ -26,6 +26,8 @@ namespace Data_Fairy_Editor
         {
             InitializeComponent();
 
+            this.Icon = Icons.data_fairy_wand;
+
             dataGridView.DataError += new DataGridViewDataErrorEventHandler(dataGridView_DataError);
 
             UpdateViews();
