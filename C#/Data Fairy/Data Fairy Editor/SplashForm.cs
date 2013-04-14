@@ -20,7 +20,10 @@ namespace Data_Fairy_Editor
             this.Icon = Icons.data_fairy;
 
             var releaseChanges = new List<string>();
-            releaseChanges.Add("Release 1.0 Schema Editing Tool and Code Generation");
+            releaseChanges.Add("R4 - PHP Code Templates");
+            releaseChanges.Add("R3 - Haxe Code Templates, ClickOnce deployment");
+            releaseChanges.Add("R2 - C# Code Templates");
+            releaseChanges.Add("R1 - Schema Editing Tool and Code Generation");
 
             StringBuilder builder = new StringBuilder();
             foreach (var line in releaseChanges)

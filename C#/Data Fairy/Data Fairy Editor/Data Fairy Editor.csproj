@@ -251,105 +251,120 @@
     <Content Include="Code Templates\AS3\tables\DBVOTableTemplate.as">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Code Templates\Haxe\dbvos\DBVORowTemplate.hx">
+    <Content Include="Code Templates\Haxe\dbvos\DBVORowTemplate.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\dbvos\DBVOsModel.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\dbvos\DBVOsModel.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\AutoTests.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\AutoTests.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\enums\DBVOEnumTemplate.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\enums\DBVOEnumTemplate.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\fragments\ClassProperty.fragment.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\fragments\ClassProperty.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\fragments\ClassVariable.fragment.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\fragments\ClassVariable.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\fragments\Constant.fragment.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\fragments\Constant.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\fragments\LocalAssignment.fragment.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\fragments\LocalAssignment.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\fragments\LocalVariable.fragment.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\fragments\LocalVariable.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\fragments\NewClassInstance.fragment.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\fragments\NewClassInstance.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\fragments\Parameter.fragment.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\fragments\Parameter.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\interfaces\IDBVOEnum.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\interfaces\IDBVOEnum.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\interfaces\IDBVORow.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\interfaces\IDBVORow.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\interfaces\IDBVOsModel.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\interfaces\IDBVOsModel.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\interfaces\IDBVOTable.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\interfaces\IDBVOTable.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\Haxe\tables\DBVOTableTemplate.hx">
+    </Content>
+    <Content Include="Code Templates\Haxe\tables\DBVOTableTemplate.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\AutoTests.php">
+    </Content>
+    <Content Include="Code Templates\PHP\Autoload.inc.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Content Include="Code Templates\PHP\AutoTests.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Code Templates\PHP\base\PropertyObject.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Code Templates\PHP\dbvos\DBVORowTemplate.class.php">
+    <Content Include="Code Templates\PHP\dbvos\DBVORowTemplate.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\dbvos\DBVOsModel.class.php">
+    </Content>
+    <Content Include="Code Templates\PHP\dbvos\DBVOsModel.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\enums\DBVOEnumTemplate.class.php">
+    </Content>
+    <Content Include="Code Templates\PHP\enums\DBVOEnumTemplate.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\fragments\ClassProperty.fragment.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\ClassProperty.fragment.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\fragments\ClassVariable.fragment.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\ClassVariable.fragment.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\fragments\Constant.fragment.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\Constant.fragment.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\fragments\LocalAssignment.fragment.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\DBVOEnumTemplate.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\fragments\LocalVariable.fragment.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\DBVORowTemplate.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\fragments\NewClassInstance.fragment.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\DBVOsModel.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\fragments\Parameter.fragment.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\LocalAssignment.fragment.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\interfaces\IDBVOEnum.class.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\LocalVariable.fragment.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\interfaces\IDBVORow.class.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\NewClassInstance.fragment.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\interfaces\IDBVOsModel.class.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\Parameter.fragment.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\interfaces\IDBVOTable.class.php">
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\PropertyObject.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Code Templates\PHP\tables\DBVOTableTemplate.class.php">
+    </Content>
+    <Content Include="Code Templates\PHP\interfaces\IDBVOEnum.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Content Include="Code Templates\PHP\interfaces\IDBVORow.class.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\PHP\interfaces\IDBVOsModel.class.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\PHP\interfaces\IDBVOTable.class.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\PHP\tables\DBVOTableTemplate.class.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="DataFairy_KeyFile.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\DataFairyIO.Enums.DataFairyFieldTypes.datasource" />
