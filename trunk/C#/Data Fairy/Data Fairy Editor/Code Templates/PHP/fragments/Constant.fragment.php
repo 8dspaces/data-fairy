@@ -1,1 +1,1 @@
-	const var NAME = VALUE;
+	const NAME = VALUE;

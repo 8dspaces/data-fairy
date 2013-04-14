@@ -98,7 +98,7 @@
             // 
             this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(386, 5);
+            this.exitButton.Location = new System.Drawing.Point(536, 5);
             this.exitButton.Margin = new System.Windows.Forms.Padding(5);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(150, 40);
@@ -114,7 +114,7 @@
             this.splashLabel.BackColor = System.Drawing.Color.Transparent;
             this.splashLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 52F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.splashLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.splashLabel.Location = new System.Drawing.Point(335, 15);
+            this.splashLabel.Location = new System.Drawing.Point(485, 15);
             this.splashLabel.Name = "splashLabel";
             this.splashLabel.Size = new System.Drawing.Size(357, 79);
             this.splashLabel.TabIndex = 4;
@@ -127,7 +127,7 @@
             this.versionLabel.BackColor = System.Drawing.Color.Transparent;
             this.versionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.versionLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.versionLabel.Location = new System.Drawing.Point(349, 94);
+            this.versionLabel.Location = new System.Drawing.Point(499, 94);
             this.versionLabel.Name = "versionLabel";
             this.versionLabel.Size = new System.Drawing.Size(343, 33);
             this.versionLabel.TabIndex = 5;
@@ -139,7 +139,7 @@
             this.authorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.authorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.authorLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.authorLabel.Location = new System.Drawing.Point(299, 127);
+            this.authorLabel.Location = new System.Drawing.Point(449, 127);
             this.authorLabel.Name = "authorLabel";
             this.authorLabel.Size = new System.Drawing.Size(393, 33);
             this.authorLabel.TabIndex = 6;
@@ -155,7 +155,7 @@
             this.latestUpdatesTitle.ForeColor = System.Drawing.SystemColors.WindowText;
             this.latestUpdatesTitle.Location = new System.Drawing.Point(175, 160);
             this.latestUpdatesTitle.Name = "latestUpdatesTitle";
-            this.latestUpdatesTitle.Size = new System.Drawing.Size(198, 33);
+            this.latestUpdatesTitle.Size = new System.Drawing.Size(348, 33);
             this.latestUpdatesTitle.TabIndex = 7;
             this.latestUpdatesTitle.Text = "Latest updates:";
             // 
@@ -169,7 +169,7 @@
             this.releaseInfoLabel.ForeColor = System.Drawing.SystemColors.WindowText;
             this.releaseInfoLabel.Location = new System.Drawing.Point(175, 193);
             this.releaseInfoLabel.Name = "releaseInfoLabel";
-            this.releaseInfoLabel.Size = new System.Drawing.Size(198, 282);
+            this.releaseInfoLabel.Size = new System.Drawing.Size(348, 282);
             this.releaseInfoLabel.TabIndex = 8;
             this.releaseInfoLabel.Text = "Release Info";
             // 
@@ -180,7 +180,7 @@
             this.commandButtonsPanel.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.commandButtonsPanel.Location = new System.Drawing.Point(163, 479);
             this.commandButtonsPanel.Name = "commandButtonsPanel";
-            this.commandButtonsPanel.Size = new System.Drawing.Size(541, 52);
+            this.commandButtonsPanel.Size = new System.Drawing.Size(691, 52);
             this.commandButtonsPanel.TabIndex = 9;
             // 
             // splashPicture
@@ -188,7 +188,7 @@
             this.splashPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.splashPicture.BackgroundImage = global::Data_Fairy_Editor.Icons.daisy_the_data_fairy;
             this.splashPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.splashPicture.Location = new System.Drawing.Point(379, 163);
+            this.splashPicture.Location = new System.Drawing.Point(529, 163);
             this.splashPicture.Name = "splashPicture";
             this.splashPicture.Size = new System.Drawing.Size(320, 316);
             this.splashPicture.TabIndex = 10;
@@ -198,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 531);
+            this.ClientSize = new System.Drawing.Size(854, 531);
             this.Controls.Add(this.commandButtonsPanel);
             this.Controls.Add(this.splashButtonsPanel);
             this.Controls.Add(this.releaseInfoLabel);

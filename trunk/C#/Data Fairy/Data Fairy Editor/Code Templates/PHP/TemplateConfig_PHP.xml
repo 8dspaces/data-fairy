@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Config>
-  <Name>PHP - DBVOs</Name>
+  <Name>PHP 5.0 - DBVOs</Name>
   <Author>John Beech</Author>
   <Contact>data.fairy@mkv25.net</Contact>
 
@@ -31,6 +31,7 @@
   <PackageFile>interfaces/IDBVOTable.class.php</PackageFile>
   <PackageFile>interfaces/IDBVORow.class.php</PackageFile>
   <PackageFile>base/PropertyObject.class.php</PackageFile>
+  <PackageFile>Autoload.inc.php</PackageFile>
   <PackageFile>AutoTests.php</PackageFile>
 
   <!-- Package generation options -->
