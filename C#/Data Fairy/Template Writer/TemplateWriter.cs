@@ -11,77 +11,80 @@ namespace net.mkv25.writer
     public class TemplateWriter
     {
         /** The dataset to base the code generation on */
-        public DataFairyFile sourceDataSet;
+        public DataFairyFile SourceDataSet;
 
         /** name of this template */
-        public string name;
+        public string Name;
 
         /** author of the template */
-        public string author;
+        public string Author;
 
         /** contact info for this template */
-        public string contact;
+        public string Contact;
 
         /** The template for the database file */
-        public TemplateFile dataBaseFileTemplate;
+        public TemplateFile DataBaseFileTemplate;
 
         /** The template for individual table class files */
-        public TemplateFile tableFileTemplate;
+        public TemplateFile TableFileTemplate;
 
         /** The template for individual row class files */
-        public TemplateFile rowFileTemplate;
+        public TemplateFile RowFileTemplate;
 
         /** The template for enumeration lists */
-        public TemplateFile enumerationFileTemplate;
+        public TemplateFile EnumerationFileTemplate;
 
         /** Any other template files that exist in the package */
-        public List<TemplateFile> packageFileTemplates;
+        public List<TemplateFile> PackageFileTemplates;
 
         /** A list of strings to search and replace on */
-        public Dictionary<string, string> basicTypes;
+        public Dictionary<string, string> BasicTypes;
+
+        /** A string to insert before variables */
+        public string VariablePrefix = String.Empty;
 
         /** A list of strings to search and replace on */
-        public List<KeyValuePair<string, string>> templateVariables;
+        public List<KeyValuePair<string, string>> TemplateVariables;
 
         /* A list of messages generated during the write process */
-        public List<KeyValuePair<DateTime, string>> logMessages;
+        public List<KeyValuePair<DateTime, string>> LogMessages;
 
         /** The seperator to use between generated package paths */
-        public string packageSeperator = ".";
+        public string PackageSeperator = ".";
 
         /** Should the code template generate folders that match the package structure */
-        public bool generatePackageFolderStructure = false;
+        public bool GeneratePackageFolderStructure = false;
 
         /** Should the package name be forced to lowercase for a given template */
-        public bool forceLowercasePackageStructure = false;
+        public bool ForceLowercasePackageStructure = false;
 
         /** A fragment for writing new class properties */
-        public TemplateFragment classPropertyFragment;
+        public TemplateFragment ClassPropertyFragment;
 
         /** A fragment for writing new class level variables */
-        public TemplateFragment classVariableFragment;
+        public TemplateFragment ClassVariableFragment;
 
         /** A fragment for defining a constant */
-        public TemplateFragment constantFragment;
+        public TemplateFragment ConstantFragment;
 
         /** A fragment for variable assignment */
-        public TemplateFragment localVariableFragment;
+        public TemplateFragment LocalVariableFragment;
 
         /** A fragment for variable assignment */
-        public TemplateFragment localAssignmentFragment;
+        public TemplateFragment LocalAssignmentFragment;
 
         /** A fragment for writing new class instances */
-        public TemplateFragment newClassInstanceFragment;
+        public TemplateFragment NewClassInstanceFragment;
 
         /** A fragment for writing parameters */
-        public TemplateFragment parameterFragment;
+        public TemplateFragment ParameterFragment;
         
         /** The package path to use for code generation */
         protected string _packageString;
 
         public TemplateWriter()
         {
-            templateVariables = new List<KeyValuePair<string, string>>();
+            TemplateVariables = new List<KeyValuePair<string, string>>();
         }
 
         /** The package path for code generation, including the modifier for lowercase mode */
@@ -89,7 +92,7 @@ namespace net.mkv25.writer
         {
             get
             {
-                if (forceLowercasePackageStructure)
+                if (ForceLowercasePackageStructure)
                 {
                     return _packageString.ToLower();
                 }
@@ -104,7 +107,7 @@ namespace net.mkv25.writer
         /** Add a template variable to be searched and replaced */
         public void AddTemplateVariable(string key, string value)
         {
-            templateVariables.Add(new KeyValuePair<string, string>(key, value));
+            TemplateVariables.Add(new KeyValuePair<string, string>(key, value));
         }
 
         /** Lookup function to convert local type in to language specific type */
@@ -114,9 +117,18 @@ namespace net.mkv25.writer
             if (requestedType == "lookup")
                 return getBasicType("int");
 
-            if (basicTypes.ContainsKey(requestedType))
-                return basicTypes[requestedType];
+            if (BasicTypes.ContainsKey(requestedType))
+                return BasicTypes[requestedType];
             return requestedType;
+        }
+
+        /** Get the full extension of a file based on the first . */
+        protected string getFullExt(string input)
+        {
+            string[] split = input.Split(new char[] { '.' }, 2);
+            if (split.Count() == 2)
+                return '.' + split[1];
+            return input;
         }
 
         /**
@@ -124,7 +136,7 @@ namespace net.mkv25.writer
          */
         public void WriteTo(string outputDirectory)
         {
-            logMessages = new List<KeyValuePair<DateTime, string>>();
+            LogMessages = new List<KeyValuePair<DateTime, string>>();
 
             if (String.IsNullOrEmpty(outputDirectory))
             {
@@ -145,10 +157,10 @@ namespace net.mkv25.writer
             directoryBrowser.GetFiles("*", SearchOption.AllDirectories).ToList().ForEach(file => file.Delete());
 
             // check to see if a folder structure needs generating for the packages
-            if (generatePackageFolderStructure)
+            if (GeneratePackageFolderStructure)
             {
                 var packagePath = new StringBuilder();
-                var packagePathArray = PackageString.Split(packageSeperator.ToCharArray());
+                var packagePathArray = PackageString.Split(PackageSeperator.ToCharArray());
                 foreach (var packagePart in packagePathArray)
                 {
                     packagePath.Append(packagePart + "\\");
@@ -171,19 +183,19 @@ namespace net.mkv25.writer
          */
         public void WriteEnumerations(string outputDirectory)
         {
-            if (enumerationFileTemplate == null)
+            if (EnumerationFileTemplate == null)
                 return;
 
             string fileName;
-            string FOLDER = Path.GetDirectoryName(enumerationFileTemplate.FileName);
-            string EXT = Path.GetExtension(enumerationFileTemplate.FileName);
-            foreach(DataTable table in sourceDataSet.Tables)
+            string FOLDER = Path.GetDirectoryName(EnumerationFileTemplate.FileName);
+            string EXT = getFullExt(EnumerationFileTemplate.FileName);
+            foreach(DataTable table in SourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Enum";
                 fileName = className + EXT;
 
                 // build the file
-                StringBuilder fileContents = new StringBuilder(enumerationFileTemplate.FileContents);
+                StringBuilder fileContents = new StringBuilder(EnumerationFileTemplate.FileContents);
                 StringBuilder variableList = new StringBuilder();
 
                 // build the list of constants for the enum
@@ -191,11 +203,11 @@ namespace net.mkv25.writer
                 foreach (DataRow row in table.Rows)
                 {
                     var variableName = NameUtils.FormatClassConstantName(row["Name"].ToString());
-                    variableList.AppendLine(constantFragment.WriteConstant(variableName, getBasicType("int"), row["Id"].ToString()));
+                    variableList.AppendLine(ConstantFragment.WriteConstant(variableName, getBasicType("int"), row["Id"].ToString()));
                 }
 
                 // replace standard set of variables
-                ReplaceVariables(fileContents, templateVariables);
+                ReplaceVariables(fileContents, TemplateVariables);
                 fileContents.Replace("PACKAGE_STRING", PackageString);
                 fileContents.Replace("CLASS_NAME", className);
                 fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
@@ -216,19 +228,19 @@ namespace net.mkv25.writer
          */
         public void WriteRowFiles(string outputDirectory)
         {
-            if (rowFileTemplate == null)
+            if (RowFileTemplate == null)
                 return;
 
             string fileName;
-            string FOLDER = Path.GetDirectoryName(rowFileTemplate.FileName);
-            string EXT = Path.GetExtension(rowFileTemplate.FileName);
-            foreach (DataFairyTable table in sourceDataSet.Tables)
+            string FOLDER = Path.GetDirectoryName(RowFileTemplate.FileName);
+            string EXT = getFullExt(RowFileTemplate.FileName);
+            foreach (DataFairyTable table in SourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Row";
                 fileName = className + EXT;
 
                 // build the file
-                StringBuilder fileContents = new StringBuilder(rowFileTemplate.FileContents);
+                StringBuilder fileContents = new StringBuilder(RowFileTemplate.FileContents);
                 StringBuilder variableList = new StringBuilder();
                 StringBuilder propertyList = new StringBuilder();
                 StringBuilder paramsString = new StringBuilder();
@@ -247,7 +259,7 @@ namespace net.mkv25.writer
                     string fieldType = getBasicType(field.FieldType);
 
                     // create variable for assignment type
-                    var paramName = "_" + NameUtils.FormatVariableName(field.FieldName);
+                    var paramName = VariablePrefix + "_" + NameUtils.FormatVariableName(field.FieldName);
                     var paramType = getBasicType(field.FieldType);
                     if (paramsString.Length > 0)
                         paramsString.Append(", ");
@@ -256,26 +268,26 @@ namespace net.mkv25.writer
                     if (field.FieldType == "lookup")
                     {
                         paramName = paramName + "Id";
-                        propertyList.AppendLine(classPropertyFragment.WriteClassProperty(fieldName, NameUtils.FormatClassName(field.FieldLookUp) + "Row"));
-                        variableList.AppendLine(classVariableFragment.WriteClassVariable(fieldName + "Id", fieldType));
-                        paramsList.AppendLine(localAssignmentFragment.WriteLocalAssignment(fieldName + "Id", paramName));
+                        propertyList.AppendLine(ClassPropertyFragment.WriteClassProperty(fieldName, NameUtils.FormatClassName(field.FieldLookUp) + "Row"));
+                        variableList.AppendLine(ClassVariableFragment.WriteClassVariable(fieldName + "Id", fieldType));
+                        paramsList.AppendLine(LocalAssignmentFragment.WriteLocalAssignment(fieldName + "Id", paramName));
                     }
                     else if (field.FieldName == "id")
                     {
                         // id is a required property on the template
-                        paramsList.AppendLine(localAssignmentFragment.WriteLocalAssignment(fieldName, paramName));
+                        paramsList.AppendLine(LocalAssignmentFragment.WriteLocalAssignment(fieldName, paramName));
                     }
                     else
                     {
-                        variableList.AppendLine(classVariableFragment.WriteClassVariable(fieldName, fieldType));
-                        paramsList.AppendLine(localAssignmentFragment.WriteLocalAssignment(fieldName, paramName));
+                        variableList.AppendLine(ClassVariableFragment.WriteClassVariable(fieldName, fieldType));
+                        paramsList.AppendLine(LocalAssignmentFragment.WriteLocalAssignment(fieldName, paramName));
                     }
 
-                    paramsString.Append(parameterFragment.WriteParameter(paramName, paramType));
+                    paramsString.Append(ParameterFragment.WriteParameter(paramName, paramType));
                 }
 
                 // replace standard set of variables
-                ReplaceVariables(fileContents, templateVariables);
+                ReplaceVariables(fileContents, TemplateVariables);
                 fileContents.Replace("PACKAGE_STRING", PackageString);
                 fileContents.Replace("CLASS_NAME", className);
                 fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
@@ -299,20 +311,20 @@ namespace net.mkv25.writer
          */
         public void WriteTableFiles(string outputDirectory)
         {
-            if (tableFileTemplate == null)
+            if (TableFileTemplate == null)
                 return;
 
             string fileName;
-            string FOLDER = Path.GetDirectoryName(tableFileTemplate.FileName);
-            string EXT = Path.GetExtension(tableFileTemplate.FileName);
-            foreach (DataFairyTable table in sourceDataSet.Tables)
+            string FOLDER = Path.GetDirectoryName(TableFileTemplate.FileName);
+            string EXT = getFullExt(TableFileTemplate.FileName);
+            foreach (DataFairyTable table in SourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
                 var rowClassName = NameUtils.FormatClassName(table.TableName) + "Row";
                 fileName = className + EXT;
 
                 // build the file
-                StringBuilder fileContents = new StringBuilder(tableFileTemplate.FileContents);
+                StringBuilder fileContents = new StringBuilder(TableFileTemplate.FileContents);
                 StringBuilder rowList = new StringBuilder();
 
                 // populate individual data rows
@@ -342,12 +354,12 @@ namespace net.mkv25.writer
                         }
                     }
 
-                    var classValue = newClassInstanceFragment.WriteNewClassInstance(rowClassName, rowParameters.ToString());
-                    rowList.AppendLine(localVariableFragment.WriteLocalVariable("row" + row["id"].ToString(), rowClassName, classValue));
+                    var classValue = NewClassInstanceFragment.WriteNewClassInstance(rowClassName, rowParameters.ToString());
+                    rowList.AppendLine(LocalVariableFragment.WriteLocalVariable(VariablePrefix + "row" + row["id"].ToString(), rowClassName, classValue));
                 }
 
                 // replace standard set of variables
-                ReplaceVariables(fileContents, templateVariables);
+                ReplaceVariables(fileContents, TemplateVariables);
                 fileContents.Replace("PACKAGE_STRING", PackageString);
                 fileContents.Replace("ROW_CLASS_NAME", rowClassName);
                 fileContents.Replace("CLASS_NAME", className);
@@ -367,57 +379,57 @@ namespace net.mkv25.writer
 
         public void WriteDatabaseFile(string outputDirectory)
         {
-            if(dataBaseFileTemplate == null)
+            if(DataBaseFileTemplate == null)
                 return;
 
             // check prerequisites
-            if (newClassInstanceFragment == null)
+            if (NewClassInstanceFragment == null)
             {
                 Log("No class instance fragment available to write database template.");
                 return;
             }
-            if (localAssignmentFragment == null)
+            if (LocalAssignmentFragment == null)
             {
                 Log("No local assignment fragment available to write database template.");
             }
 
-            string fileName = dataBaseFileTemplate.FileName;
-            StringBuilder fileContents = new StringBuilder(dataBaseFileTemplate.FileContents);
+            string fileName = DataBaseFileTemplate.FileName;
+            StringBuilder fileContents = new StringBuilder(DataBaseFileTemplate.FileContents);
 
             StringBuilder variableList = new StringBuilder();
             variableList.AppendLine("// code generated list of all tables");
-            foreach (DataTable table in sourceDataSet.Tables)
+            foreach (DataTable table in SourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
-                var classValue = newClassInstanceFragment.WriteNewClassInstance(className, "");
+                var classValue = NewClassInstanceFragment.WriteNewClassInstance(className, "");
                 var varName = NameUtils.FormatClassConstantName(table.TableName);
-                variableList.AppendLine(classVariableFragment.WriteClassVariable(varName, className));
+                variableList.AppendLine(ClassVariableFragment.WriteClassVariable(varName, className));
             }
 
             StringBuilder classList = new StringBuilder();
             classList.AppendLine("// code generated list of all tables");
-            foreach (DataTable table in sourceDataSet.Tables)
+            foreach (DataTable table in SourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
-                var classValue = newClassInstanceFragment.WriteNewClassInstance(className, "");
+                var classValue = NewClassInstanceFragment.WriteNewClassInstance(className, "");
                 var variableName = NameUtils.FormatClassConstantName(table.TableName);
-                classList.AppendLine(localAssignmentFragment.WriteLocalAssignment(variableName, classValue));
+                classList.AppendLine(LocalAssignmentFragment.WriteLocalAssignment(variableName, classValue));
             }
 
             // replace standard set of variables
-            ReplaceVariables(fileContents, templateVariables);
+            ReplaceVariables(fileContents, TemplateVariables);
             fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
             fileContents.Replace("CLASS_LIST", classList.ToString().TrimEnd('\n', '\r'));
             fileContents.Replace("PACKAGE_STRING", PackageString);
 
             // write the file
-            var filePath = outputDirectory + "\\" + dataBaseFileTemplate.FileName;
+            var filePath = outputDirectory + "\\" + DataBaseFileTemplate.FileName;
             Directory.CreateDirectory(Path.GetDirectoryName(filePath));
             StreamWriter writer = new StreamWriter(filePath);
             writer.Write(fileContents);
             writer.Close();
 
-            Log("Created Database File - " + dataBaseFileTemplate.FileName);
+            Log("Created Database File - " + DataBaseFileTemplate.FileName);
         }
 
         public void WritePackageFiles(string outputDirectory)
@@ -426,14 +438,14 @@ namespace net.mkv25.writer
             StringBuilder fileContents;
             StreamWriter writer;
 
-            foreach (TemplateFile packageFileTemplate in packageFileTemplates)
+            foreach (TemplateFile packageFileTemplate in PackageFileTemplates)
             {
                 // work out the file name
                 fileName = packageFileTemplate.FileName;
                 fileContents = new StringBuilder(packageFileTemplate.FileContents);
 
                 // build the file contents
-                ReplaceVariables(fileContents, templateVariables);
+                ReplaceVariables(fileContents, TemplateVariables);
                 fileContents.Replace("PACKAGE_STRING", PackageString);
 
                 // write the file
@@ -458,7 +470,7 @@ namespace net.mkv25.writer
         public void Log(string message)
         {
             var log = new KeyValuePair<DateTime, string>(DateTime.Now, message);
-            logMessages.Add(log);
+            LogMessages.Add(log);
         }
     }
 }

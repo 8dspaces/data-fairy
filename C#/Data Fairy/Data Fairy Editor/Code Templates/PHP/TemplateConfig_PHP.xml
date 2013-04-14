@@ -4,14 +4,38 @@
   <Author>John Beech</Author>
   <Contact>data.fairy@mkv25.net</Contact>
 
+  <!-- Core template files -->
   <DatabaseFileTemplate>dbvos/DBVOsModel.class.php</DatabaseFileTemplate>
-  <ClassFileTemplate>dbvos/DBVOTemplate.class.php</ClassFileTemplate>
-  <EnumerationFileTemplate>enums/EnumTemplate.class.php</EnumerationFileTemplate>
-  <PackageFile>interfaces/IDBVOsModel.class.php</PackageFile>
-  <PackageFile>interfaces/IDBVO.class.php</PackageFile>
-  <PackageFile>interfaces/IDBVOEnum.class.php</PackageFile>
-  <PackageSeperator>.</PackageSeperator>
-  <CreatePackageFolderStructure>false</CreatePackageFolderStructure>
+  <TableFileTemplate>tables/DBVOTableTemplate.class.php</TableFileTemplate>
+  <RowFileTemplate>dbvos/DBVORowTemplate.class.php</RowFileTemplate>
+  <EnumerationFileTemplate>enums/DBVOEnumTemplate.class.php</EnumerationFileTemplate>
 
-  <Variable key="Server">http://mkv25.net/data.fairy/</Variable>
+  <!-- Core fragment templates -->
+  <Fragment name="ClassProperty">fragments/ClassProperty.fragment.php</Fragment>
+  <Fragment name="ClassVariable">fragments/ClassVariable.fragment.php</Fragment>
+  <Fragment name="Constant">fragments/Constant.fragment.php</Fragment>
+  <Fragment name="LocalAssignment">fragments/LocalAssignment.fragment.php</Fragment>
+  <Fragment name="LocalVariable">fragments/LocalVariable.fragment.php</Fragment>
+  <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.php</Fragment>
+  <Fragment name="Parameter">fragments/Parameter.fragment.php</Fragment>
+  <VariablePrefix>$</VariablePrefix>
+  
+  <!-- Basic types for this language -->
+  <Type name="int">Int</Type>
+  <Type name="string">String</Type>
+  <Type name="decimal">Float</Type>
+
+  <!-- Supporting package files -->
+  <PackageFile>interfaces/IDBVOsModel.class.php</PackageFile>
+  <PackageFile>interfaces/IDBVOEnum.class.php</PackageFile>
+  <PackageFile>interfaces/IDBVOTable.class.php</PackageFile>
+  <PackageFile>interfaces/IDBVORow.class.php</PackageFile>
+  <PackageFile>base/PropertyObject.class.php</PackageFile>
+  <PackageFile>AutoTests.php</PackageFile>
+
+  <!-- Package generation options -->
+  <PackageSeperator>.</PackageSeperator>
+  <GeneratePackageFolderStructure>false</GeneratePackageFolderStructure>
+  <ForceLowercasePackageStructure>false</ForceLowercasePackageStructure>
+  
 </Config>
