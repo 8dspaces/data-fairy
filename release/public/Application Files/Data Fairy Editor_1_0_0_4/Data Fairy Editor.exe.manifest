@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WK5qDtC4XQe1Njo9P72xqpgdvvY=</dsig:DigestValue>
+        <dsig:DigestValue>zx+u+nJSPBNGr0MfpQktSwItQaI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -74,7 +74,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6YXqbtdMhxfH4XKzLrqLuJUmc20=</dsig:DigestValue>
+        <dsig:DigestValue>DjfkGudjFkitN9O6SQGK6FJqHRA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -384,6 +384,150 @@
       <dsig:DigestValue>NyrIHWQ7WGQ9eTc3h1JmrDvgYn8=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Code Templates\Haxe\AutoTests.hx" size="384">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>d+PTpd1r1yc8YTI0SXUL21kuX5I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\dbvos\DBVORowTemplate.hx" size="748">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3pf9Iw8lzjDnGhnAPKVePYdg/Og=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\dbvos\DBVOsModel.hx" size="1430">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8bldT5+hbs0+5ncIyEUmHwivxbo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\enums\DBVOEnumTemplate.hx" size="131">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8GqqhHFNr/pA2NeL5CvOkYx0B7E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\fragments\ClassProperty.fragment.hx" size="325">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>UCj0QBg3minx03WrAQhtwbvR060=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\fragments\ClassVariable.fragment.hx" size="21">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>201Vd2YZjNuKrv7KroK8uexKpUo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\fragments\Constant.fragment.hx" size="44">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OLFzTQw527guVUGN00QJ9wpRiNo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\fragments\LocalAssignment.fragment.hx" size="15">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bjKSkZKAuZS1xI00IrmpKDzJaqM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\fragments\LocalVariable.fragment.hx" size="24">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>n2duZOdVSSu7ImVZfktrcFqxIY8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\fragments\NewClassInstance.fragment.hx" size="46">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>6iTV1FMHyO9I48WxTsqKJd1dsTU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\fragments\Parameter.fragment.hx" size="9">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Th+164MldILjRxthNh94cZ/CQmY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\interfaces\IDBVOEnum.hx" size="69">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>D5k5vQGF+uuKP1kFAhY7lE8M5s0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\interfaces\IDBVORow.hx" size="121">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>J2JqGvLY2wdUcYgNR6z/weGIA0E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\interfaces\IDBVOsModel.hx" size="192">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OKnS7/09dtauggx0y4PtRcbwltg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\interfaces\IDBVOTable.hx" size="247">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>w4xRBHmwQx0fwK0J7qWYcQyoLJw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\Haxe\tables\DBVOTableTemplate.hx" size="1467">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>n4ox9wMbqZPOeoEXweLM7rm8Wmg=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Code Templates\Haxe\TemplateConfig_Haxe.xml" size="1901">
     <hash>
       <dsig:Transforms>
@@ -402,6 +546,15 @@
       <dsig:DigestValue>oLMkmdOooyNjRuTZljxZdlFiBBU=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Code Templates\PHP\AutoTests.php" size="345">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>5JWL+rrZvEaL26Ojwn/BRIS31iM=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Code Templates\PHP\base\PropertyObject.class.php" size="685">
     <hash>
       <dsig:Transforms>
@@ -409,6 +562,177 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>xINLrVZA4BjAo39Wu6XtXLnUtvA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\dbvos\DBVORowTemplate.class.php" size="857">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>y++KGpz0sazUsmO5/1NncM5fhZo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\dbvos\DBVOsModel.class.php" size="1485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FFFnJcRCZzdSe2LMpVVgr7W0iLg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\enums\DBVOEnumTemplate.class.php" size="132">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>JTuCWHVeBlLZvMTqo4fQR03JxC8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\ClassProperty.fragment.php" size="292">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Ev0G79pVEgQIzsLOIT4XVHVCpnc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\ClassVariable.fragment.php" size="27">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>S6S0ITzLW9SLKRMNol7BSCjmRoY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\Constant.fragment.php" size="20">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BHwjzTkeXdNoWETRdNZVEIjIles=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\DBVOEnumTemplate.class.php" size="132">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>JTuCWHVeBlLZvMTqo4fQR03JxC8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\DBVORowTemplate.class.php" size="857">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>y++KGpz0sazUsmO5/1NncM5fhZo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\DBVOsModel.class.php" size="1485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FFFnJcRCZzdSe2LMpVVgr7W0iLg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\LocalAssignment.fragment.php" size="22">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oUVitLSeotvQsWzaPo2eJvzfP20=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\LocalVariable.fragment.php" size="15">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bjKSkZKAuZS1xI00IrmpKDzJaqM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\NewClassInstance.fragment.php" size="56">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>P17Tm1BOmw3eKsSjq6Xav6fMrnk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\Parameter.fragment.php" size="4">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>qdNxRRtpCayFEXEwuRU6lkmaNiw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\fragments\PropertyObject.class.php" size="685">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>xINLrVZA4BjAo39Wu6XtXLnUtvA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\interfaces\IDBVOEnum.class.php" size="82">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>d4DKBNpFH2BFP5Jj/qhitc/Gkds=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\interfaces\IDBVORow.class.php" size="260">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>pjJIL7zrwBlSF1J34rK6KMGPTIU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\interfaces\IDBVOsModel.class.php" size="330">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>R9cDSRf9L4fz5dBU/JNETYdcUdE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\interfaces\IDBVOTable.class.php" size="424">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>cUzOv3GJtAGJYuOxJ6dmUCFhU3A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Code Templates\PHP\tables\DBVOTableTemplate.class.php" size="1516">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>C2WQ9i578AYzHDX6THH+eWsr5tY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Code Templates\PHP\TemplateConfig_PHP.xml" size="1955">
@@ -454,4 +778,4 @@
       <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
     </application>
   </compatibility>
-<publisherIdentity name="CN=CHII\Markavian" issuerKeyHash="02b3c1c6eb6472bf27b1b1266439de54681f07bc" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>qWgf5O+jbgfalwItn7lD1uxS5Sg=</DigestValue></Reference></SignedInfo><SignatureValue>kA8N2Ra0jfv19q9J4xXeYRf4lmwnd9K+PmlvRtsy7tR0Tyiq2APnbnlMlHAxfoNmGNiv51YntLPr2hcfol4LMsyW17qqD00edvv2GR7fLYlZTjW7CKmss++LXJSfF/x1a4HVq919H/fVJQ1ZXzSkgjDAp9wQ3tOYJMewFfzZRh0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>mGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="28e552ecd643b99f2d0297da076ea3efe41f68a9" Description="" Url=""><as:assemblyIdentity name="Data Fairy Editor.exe" version="1.0.0.4" publicKeyToken="5b9d65de5a1577c3" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=CHII\Markavian</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>9CmoGKbQRXhTYxU7KCTNG5xj2l8=</DigestValue></Reference></SignedInfo><SignatureValue>P6vme/6S8lSLWeN0ziy555U/s2UnDtWOpn9nf5mPP3PIuHLxqvBMwZtR89xhwvSzxQIHsNa92qfeeNKoBXSDtAnlhl7/f0Xy+fs5tkUi2YzSsV6nHuDxU9wXuEsX8sMKaGG1iG1KafWoCdXm6dyqn7/G42eOCk7b9VX1lsvQnsg=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>mGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQeU1t6JOpe65ODKXGw1IrLjANBgkqhkiG9w0BAQUFADAnMSUwIwYDVQQDHhwAQwBIAEkASQBcAE0AYQByAGsAYQB2AGkAYQBuMB4XDTEzMDQxMzE2MDI0MVoXDTE0MDQxMzIyMDI0MVowJzElMCMGA1UEAx4cAEMASABJAEkAXABNAGEAcgBrAGEAdgBpAGEAbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAmGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOECAwEAATANBgkqhkiG9w0BAQUFAAOBgQBbTu7mSKHKNvlyVISjflPL3KsHHyLUOeUEEOSFoBUI/sXiHaJ65TI4w8lOK2EGNIDRCa9Xveb8ehz4xY7jEy7jtOYUIQm29f5eb0iO2j5JAb0N373InDQNgGlaXWPAP3TwLK0nKmqJ6h7x07MKQP6bgqhgIBOX+FyRil2MZ/FqgQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=CHII\Markavian" issuerKeyHash="02b3c1c6eb6472bf27b1b1266439de54681f07bc" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>Tn/FfwXs5C02jeOS1KGxdMth71M=</DigestValue></Reference></SignedInfo><SignatureValue>gYh46zmr51EGuSZFIOKzgkL5BELMXfjGJbZXl0HS7ltuYUqvaoRR3qfTk/c48pMHeeiMtcxbwy0CcTvq5/5wyYNoil2K4vMVANWLukiVC8Bk94jtsNfhxDc5nf7ENc3iO4HdrdHYRASBcOIKlcU0V5Lq4Gl82CCXdONoXN5C2YI=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>mGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="53ef61cb74b1a1d492e38d362de4ec057fc57f4e" Description="" Url=""><as:assemblyIdentity name="Data Fairy Editor.exe" version="1.0.0.4" publicKeyToken="5b9d65de5a1577c3" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=CHII\Markavian</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>SeWkrLOd/8spdrmmrMvXY4CeAss=</DigestValue></Reference></SignedInfo><SignatureValue>AeloKG/rZAisGJY5O49qqf5+t2WgjWBRc5o8RD/hI1B0zFXWD7GWjDkHtFZwdVWv3NwkL8kpnUrMRkt3H6nOZV/MHsW0udKpww3rcZbx4LqlIoKOwSMvjQm1G/CjgZZkHvAYVBmP4WF6wjzNJ8GaVxbC+58GKMBpqyV6lUz5LwU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>mGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQeU1t6JOpe65ODKXGw1IrLjANBgkqhkiG9w0BAQUFADAnMSUwIwYDVQQDHhwAQwBIAEkASQBcAE0AYQByAGsAYQB2AGkAYQBuMB4XDTEzMDQxMzE2MDI0MVoXDTE0MDQxMzIyMDI0MVowJzElMCMGA1UEAx4cAEMASABJAEkAXABNAGEAcgBrAGEAdgBpAGEAbjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAmGlD+1x4a/2NcJJkVZ2Bw7IB254opf3rnn21Y6KoTCP2f3TTqDbMtM2Gmko8I5XAS/OrMGc84xsvoz7QHd7x9gEXyuIJI6vKMptMIDk4xWOzLNklE0dWHVUA8ekoanyGBpYHudMfqWn8ZGkPnfUgSOUbh0dD7VtMeX+ToKGHeOECAwEAATANBgkqhkiG9w0BAQUFAAOBgQBbTu7mSKHKNvlyVISjflPL3KsHHyLUOeUEEOSFoBUI/sXiHaJ65TI4w8lOK2EGNIDRCa9Xveb8ehz4xY7jEy7jtOYUIQm29f5eb0iO2j5JAb0N373InDQNgGlaXWPAP3TwLK0nKmqJ6h7x07MKQP6bgqhgIBOX+FyRil2MZ/FqgQ==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
