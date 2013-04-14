@@ -19,6 +19,7 @@
   <Fragment name="LocalVariable">fragments/LocalVariable.fragment.hx</Fragment>
   <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.hx</Fragment>
   <Fragment name="Parameter">fragments/Parameter.fragment.hx</Fragment>
+  <VariablePrefix></VariablePrefix>
 
   <!-- Basic types for this language -->
   <Type name="int">Int</Type>

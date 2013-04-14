@@ -52,60 +52,60 @@ namespace net.mkv25.writer
             XmlNode nameNode = xml.SelectSingleNode("/Config/Name");
             if (nameNode != null)
             {
-                template.name = nameNode.InnerText;
-                template.AddTemplateVariable("TEMPLATE_NAME", template.name);
+                template.Name = nameNode.InnerText;
+                template.AddTemplateVariable("TEMPLATE_NAME", template.Name);
             }
 
             XmlNode authorNode = xml.SelectSingleNode("/Config/Author");
             if (authorNode != null)
             {
-                template.author = authorNode.InnerText;
-                template.AddTemplateVariable("TEMPLATE_AUTHOR", template.name);
+                template.Author = authorNode.InnerText;
+                template.AddTemplateVariable("TEMPLATE_AUTHOR", template.Name);
             }
 
             XmlNode contactNode = xml.SelectSingleNode("/Config/Contact");
             if (contactNode != null)
             {
-                template.contact = contactNode.InnerText;
-                template.AddTemplateVariable("TEMPLATE_CONTACT", template.name);
+                template.Contact = contactNode.InnerText;
+                template.AddTemplateVariable("TEMPLATE_CONTACT", template.Name);
             }
 
             XmlNode databaseFileTemplateNode = xml.SelectSingleNode("/Config/DatabaseFileTemplate");
             if (databaseFileTemplateNode != null)
-                template.dataBaseFileTemplate = new TemplateFile() { FileName = databaseFileTemplateNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + databaseFileTemplateNode.InnerText) };
+                template.DataBaseFileTemplate = new TemplateFile() { FileName = databaseFileTemplateNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + databaseFileTemplateNode.InnerText) };
 
             XmlNode tableFileTemplateNode = xml.SelectSingleNode("/Config/TableFileTemplate");
             if (tableFileTemplateNode != null)
-                template.tableFileTemplate = new TemplateFile() { FileName = tableFileTemplateNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + tableFileTemplateNode.InnerText) };
+                template.TableFileTemplate = new TemplateFile() { FileName = tableFileTemplateNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + tableFileTemplateNode.InnerText) };
 
             XmlNode rowFileTemplateNode = xml.SelectSingleNode("/Config/RowFileTemplate");
             if (rowFileTemplateNode != null)
-                template.rowFileTemplate = new TemplateFile() { FileName = rowFileTemplateNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + rowFileTemplateNode.InnerText) };
+                template.RowFileTemplate = new TemplateFile() { FileName = rowFileTemplateNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + rowFileTemplateNode.InnerText) };
 
             XmlNode enumerationFileTemplateNode = xml.SelectSingleNode("/Config/EnumerationFileTemplate");
             if (enumerationFileTemplateNode != null)
-                template.enumerationFileTemplate = new TemplateFile() { FileName = enumerationFileTemplateNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + enumerationFileTemplateNode.InnerText) };
+                template.EnumerationFileTemplate = new TemplateFile() { FileName = enumerationFileTemplateNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + enumerationFileTemplateNode.InnerText) };
 
             XmlNodeList packageFileNodes = xml.SelectNodes("/Config/PackageFile");
-            template.packageFileTemplates = new List<TemplateFile>();
+            template.PackageFileTemplates = new List<TemplateFile>();
             foreach (XmlNode packageFileNode in packageFileNodes)
             {
                 var packageFile = new TemplateFile() { FileName = packageFileNode.InnerText, FileContents = ReadFileContents(templateDirectory + "\\" + packageFileNode.InnerText) };
                 if (!String.IsNullOrEmpty(packageFile.FileContents))
-                    template.packageFileTemplates.Add(packageFile);
+                    template.PackageFileTemplates.Add(packageFile);
             }
 
             XmlNode packageSeperatorNode = xml.SelectSingleNode("/Config/PackageSeperator");
             if(packageSeperatorNode != null)
-                template.packageSeperator = packageSeperatorNode.InnerText;
+                template.PackageSeperator = packageSeperatorNode.InnerText;
 
             XmlNode generatePackageFolderStructureNode = xml.SelectSingleNode("/Config/GeneratePackageFolderStructure");
             if(generatePackageFolderStructureNode != null)
-                template.generatePackageFolderStructure = (generatePackageFolderStructureNode.InnerText == "true");
+                template.GeneratePackageFolderStructure = (generatePackageFolderStructureNode.InnerText == "true");
 
             XmlNode forceLowercasePackageStructureNode = xml.SelectSingleNode("/Config/ForceLowercasePackageStructure");
             if (forceLowercasePackageStructureNode != null)
-                template.forceLowercasePackageStructure = (forceLowercasePackageStructureNode.InnerText == "true");
+                template.ForceLowercasePackageStructure = (forceLowercasePackageStructureNode.InnerText == "true");
 
             XmlNodeList fragmentNodes = xml.SelectNodes("/Config/Fragment");
             foreach (XmlNode fragmentNode in fragmentNodes)
@@ -115,29 +115,33 @@ namespace net.mkv25.writer
                 fragment.fragmentBody = ReadFileContents(templateDirectory + "\\" + fragmentNode.InnerText);
 
                 if (fragmentName == "ClassProperty")
-                    template.classPropertyFragment = fragment;
+                    template.ClassPropertyFragment = fragment;
                 else if (fragmentName == "ClassVariable")
-                    template.classVariableFragment = fragment;
+                    template.ClassVariableFragment = fragment;
                 else if (fragmentName == "Constant")
-                    template.constantFragment = fragment;
+                    template.ConstantFragment = fragment;
                 else if (fragmentName == "LocalAssignment")
-                    template.localAssignmentFragment = fragment;
+                    template.LocalAssignmentFragment = fragment;
                 else if (fragmentName == "LocalVariable")
-                    template.localVariableFragment = fragment;
+                    template.LocalVariableFragment = fragment;
                 else if (fragmentName == "NewClassInstance")
-                    template.newClassInstanceFragment = fragment;
+                    template.NewClassInstanceFragment = fragment;
                 else if (fragmentName == "Parameter")
-                    template.parameterFragment = fragment;
+                    template.ParameterFragment = fragment;
             }
 
             XmlNodeList typeNodes = xml.SelectNodes("/Config/Type");
-            template.basicTypes = new Dictionary<string, string>();
+            template.BasicTypes = new Dictionary<string, string>();
             foreach (XmlNode typeNode in typeNodes)
             {
                 var key = typeNode.Attributes["name"].Value;
                 var value = typeNode.InnerText;
-                template.basicTypes.Add(key, value);
+                template.BasicTypes.Add(key, value);
             }
+            
+            XmlNode variablePrefixNode = xml.SelectSingleNode("/Config/VariablePrefix");
+            if (variablePrefixNode != null)
+                template.VariablePrefix = variablePrefixNode.InnerText;
 
             return template;
         }

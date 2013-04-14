@@ -78,7 +78,7 @@ namespace Data_Fairy_Editor
             {
                 TemplateWriter template = TemplateWriterConfig.LoadFromDirectory(item);
                 if(template != null)
-                    options.Add(new KeyValuePair<string, TemplateWriter>(template.name, template));
+                    options.Add(new KeyValuePair<string, TemplateWriter>(template.Name, template));
             }
             templateComboBox.DataSource = options;
             templateComboBox.DisplayMember = "Key";
@@ -116,7 +116,7 @@ namespace Data_Fairy_Editor
             exportTimer.Start();
 
             reporterLog = new StringBuilder();
-            reporterLog.AppendLine(String.Format("Started export  {0}", template.name));
+            reporterLog.AppendLine(String.Format("Started export  {0}", template.Name));
             reportBox.Text = reporterLog.ToString();
 
             BackgroundWorker exporterThread = new BackgroundWorker();
@@ -132,11 +132,11 @@ namespace Data_Fairy_Editor
             TemplateWriter template = (TemplateWriter)e.Argument;
             if (template != null)
             {
-                template.sourceDataSet = SourceDataSet;
+                template.SourceDataSet = SourceDataSet;
                 template.PackageString = packageTextInput.Text;
                 template.WriteTo(outputDirectoryInput.Text);
 
-                foreach(var message in template.logMessages)
+                foreach(var message in template.LogMessages)
                 {
                     reporterLog.AppendLine(String.Format("{0}: {1}", message.Key, message.Value));
                 }

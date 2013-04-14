@@ -20,7 +20,8 @@
   <Fragment name="LocalVariable">fragments/LocalVariable.fragment.cs</Fragment>
   <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.cs</Fragment>
   <Fragment name="Parameter">fragments/Parameter.fragment.cs</Fragment>
-
+  <VariablePrefix></VariablePrefix>
+  
   <!-- Basic types for this language -->
   <Type name="int">int</Type>
   <Type name="string">string</Type>
