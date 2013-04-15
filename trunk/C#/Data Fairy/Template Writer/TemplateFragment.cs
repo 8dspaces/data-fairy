@@ -20,8 +20,8 @@ namespace net.mkv25.writer
         public string WriteLocalVariable(string varName, string type, string value)
         {
             var s = fragmentBody;
-            s = s.Replace("NAME", varName);
             s = s.Replace("TYPE", type);
+            s = s.Replace("NAME", varName);
             s = s.Replace("VALUE", value);
             return s;
         }
@@ -29,8 +29,8 @@ namespace net.mkv25.writer
         public string WriteConstant(string varName, string type, string value)
         {
             var s = fragmentBody;
-            s = s.Replace("NAME", varName);
             s = s.Replace("TYPE", type);
+            s = s.Replace("NAME", varName);
             s = s.Replace("VALUE", value);
             return s;
         }
@@ -46,25 +46,25 @@ namespace net.mkv25.writer
         public string WriteClassProperty(string name, string type)
         {
             var s = fragmentBody;
-            s = s.Replace("NAME", name);
             s = s.Replace("TYPE", type);
+            s = s.Replace("NAME", name);
             return s;
         }
 
         public string WriteClassVariable(string name, string type, string scope = "public")
         {
             var s = fragmentBody;
+            s = s.Replace("TYPE", type);
             s = s.Replace("SCOPE", scope);
             s = s.Replace("NAME", name);
-            s = s.Replace("TYPE", type);
             return s;
         }
 
         public string WriteParameter(string name, string type)
         {
             var s = fragmentBody;
-            s = s.Replace("NAME", name);
             s = s.Replace("TYPE", type);
+            s = s.Replace("NAME", name);
             return s;
         }
     }
