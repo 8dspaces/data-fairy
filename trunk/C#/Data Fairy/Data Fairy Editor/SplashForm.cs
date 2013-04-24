@@ -19,7 +19,10 @@ namespace Data_Fairy_Editor
 
             this.Icon = Icons.data_fairy;
 
+            versionLabel.Text = String.Format("Version {0}", "1.0.5");
+
             var releaseChanges = new List<string>();
+            releaseChanges.Add("R5 - Tweak to code generation");
             releaseChanges.Add("R4 - PHP Code Templates");
             releaseChanges.Add("R3 - Haxe Code Templates, ClickOnce deployment");
             releaseChanges.Add("R2 - C# Code Templates");
