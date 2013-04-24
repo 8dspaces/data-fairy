@@ -254,6 +254,18 @@ namespace net.mkv25.writer
                 // populate list of variables
                 foreach (DataFairySchemaField field in table.Schema.AllFields)
                 {
+                    if (String.IsNullOrEmpty(field.FieldName))
+                    {
+                        Log("Skipping empty field on " + table.Schema.TableName);
+                        continue;
+                    }
+
+                    if (field.FieldType == null)
+                    {
+                        Log("Skipping null field type on " + table.Schema.TableName);
+                        continue;
+                    }
+
                     // create variable for basic types
                     string fieldName = field.FieldName;
                     string fieldType = getBasicType(field.FieldType);
@@ -336,6 +348,9 @@ namespace net.mkv25.writer
                     // populate list of variables
                     foreach (DataFairySchemaField field in table.Schema.AllFields)
                     {
+                        if (String.IsNullOrEmpty(field.FieldName))
+                            continue;
+
                         if (rowParameters.Length > 0)
                             rowParameters.Append(", ");
 
