@@ -1,0 +1,1 @@
+		$this->NAME = VALUE;

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Config>
+
+  <!-- Meta data -->
+  <Name>AS3 - DBVOs</Name>
+  <Author>John Beech</Author>
+  <Contact>data.fairy@mkv25.net</Contact>
+
+  <!-- Core template files -->
+  <DatabaseFileTemplate>dbvos/DBVOsModel.as</DatabaseFileTemplate>
+  <TableFileTemplate>tables/DBVOTableTemplate.as</TableFileTemplate>
+  <RowFileTemplate>dbvos/DBVORowTemplate.as</RowFileTemplate>
+  <EnumerationFileTemplate>enums/DBVOEnumTemplate.as</EnumerationFileTemplate>
+
+  <!-- Core fragment templates -->
+  <Fragment name="ClassProperty">fragments/ClassProperty.fragment.as</Fragment>
+  <Fragment name="ClassVariable">fragments/ClassVariable.fragment.as</Fragment>
+  <Fragment name="Constant">fragments/Constant.fragment.as</Fragment>
+  <Fragment name="LocalAssignment">fragments/LocalAssignment.fragment.as</Fragment>
+  <Fragment name="LocalVariable">fragments/LocalVariable.fragment.as</Fragment>
+  <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.as</Fragment>
+  <Fragment name="Parameter">fragments/Parameter.fragment.as</Fragment>
+  <VariablePrefix></VariablePrefix>
+  
+  <!-- Basic types for this language -->
+  <Type name="int">int</Type>
+  <Type name="string">String</Type>
+  <Type name="decimal">Number</Type>
+  
+  <!-- Supporting package files -->
+  <PackageFile>AutoTests.as</PackageFile>
+  <PackageFile>interfaces/IDBVOsModel.as</PackageFile>
+  <PackageFile>interfaces/IDBVOEnum.as</PackageFile>
+  <PackageFile>interfaces/IDBVOTable.as</PackageFile>
+  <PackageFile>interfaces/IDBVORow.as</PackageFile>
+
+  <!-- Package generation options -->
+  <PackageSeperator>.</PackageSeperator>
+  <GeneratePackageFolderStructure>true</GeneratePackageFolderStructure>
+  <ForceLowercasePackageStructure>false</ForceLowercasePackageStructure>
+
+</Config>
