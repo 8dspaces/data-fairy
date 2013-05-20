@@ -32,7 +32,7 @@
     <PublisherName>mkv25</PublisherName>
     <SuiteName>Data Fairy</SuiteName>
     <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.5.%2a</ApplicationVersion>
+    <ApplicationVersion>1.0.6.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -150,6 +150,9 @@
     </Compile>
     <Compile Include="CodeExportForm.Designer.cs">
       <DependentUpon>CodeExportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoubleBufferedDataGrid.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="EditorForm.cs">
       <SubType>Form</SubType>

@@ -29,14 +29,13 @@ namespace Data_Fairy_Editor
             this.Icon = Icons.data_fairy_wand;
 
             dataGridView.DataError += new DataGridViewDataErrorEventHandler(dataGridView_DataError);
-
             UpdateViews();
         }
 
         void dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            // chill
-            var x = sender;
+            var dataGridView = sender as DataGridView;
+            dataGridView.CurrentCell.Value = DBNull.Value;
         }
 
         public void UpdateViews()
@@ -90,6 +89,7 @@ namespace Data_Fairy_Editor
                         // create binding source from lookup field
                         var lookupTable = CurrentFile.GetTable(field.FieldLookUp);
                         var lookupValues = new List<KeyValuePair<string, int>>();
+                        lookupValues.Add(new KeyValuePair<string, int>(String.Empty, -1)); // the empty value, and -1 value doesn't work with the data binding
                         foreach (DataRow row in lookupTable.Rows)
                         {
                             lookupValues.Add(new KeyValuePair<string, int>(row["name"].ToString(), int.Parse(row["id"].ToString())));
