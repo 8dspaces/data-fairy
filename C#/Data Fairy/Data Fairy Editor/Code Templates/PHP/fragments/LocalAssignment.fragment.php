@@ -1,1 +1,1 @@
-		$this->NAME = VALUE;
+		$this->{NAME} = {VALUE};

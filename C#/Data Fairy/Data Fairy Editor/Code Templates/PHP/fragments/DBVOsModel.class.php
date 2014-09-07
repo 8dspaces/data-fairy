@@ -1,5 +1,5 @@
 <?php
-/** @package PACKAGE_STRING.dbvos; */
+/** @package {PACKAGE_STRING}.dbvos; */
 
 class DBVOsModel extends PropertyObject implements IDBVOsModel
 {
@@ -9,7 +9,7 @@ class DBVOsModel extends PropertyObject implements IDBVOsModel
 	/** Has the list of tables been loaded yet */
 	private $_loaded;
 
-	VARIABLE_LIST
+	{VARIABLE_LIST}
 	
 	public function __construct()
 	{
@@ -23,7 +23,7 @@ class DBVOsModel extends PropertyObject implements IDBVOsModel
 	{
 		$dbvos = $this;
 
-		CLASS_LIST
+		{CLASS_LIST}
 			
 		$this->_loaded = true;
 	}
@@ -57,24 +57,24 @@ class DBVOsModel extends PropertyObject implements IDBVOsModel
 		
 	/** Retrieves a row from a table
 	 * @param Int $id
-	 * @param String $type
+	 * @param String ${TYPE}
 	 * @return IDBVORow
 	 */
-	public function retrieve($id, $type)
+	public function retrieve($id, ${TYPE})
 	{
-		$table = $this->selectTable($type);
+		$table = $this->selectTable(${TYPE});
 		return $table->getRow($id);
 	}
 		
-	/** Retrieves a table by type
-	 * @param String $type
+	/** Retrieves a table by {TYPE}
+	 * @param String ${TYPE}
 	 * @return IDBVOTable
 	 */
-	public function selectTable($type)
+	public function selectTable(${TYPE})
 	{
 		foreach($this->_tableList as $table)
 		{
-			if($table->rowType == $type)
+			if($table->rowType == ${TYPE})
 				return $table;
 		}
 		return false;

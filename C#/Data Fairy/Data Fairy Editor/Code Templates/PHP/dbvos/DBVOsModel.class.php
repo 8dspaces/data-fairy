@@ -1,5 +1,5 @@
 <?php
-/** @package PACKAGE_STRING.dbvos; */
+/** @package {PACKAGE_STRING}.dbvos; */
 
 class DBVOsModel extends PropertyObject implements IDBVOsModel
 {
@@ -9,7 +9,7 @@ class DBVOsModel extends PropertyObject implements IDBVOsModel
 	/** Has the list of tables been loaded yet */
 	private $_loaded;
 
-	VARIABLE_LIST
+	{VARIABLE_LIST}
 	
 	public function __construct()
 	{
@@ -23,7 +23,7 @@ class DBVOsModel extends PropertyObject implements IDBVOsModel
 	{
 		$dbvos = $this;
 
-		CLASS_LIST
+		{CLASS_LIST}
 			
 		$this->_loaded = true;
 	}

@@ -1,5 +1,5 @@
 <?php
-/* @package PACKAGE_STRING.interfaces; */
+/* @package {PACKAGE_STRING}.interfaces; */
 
 interface IDBVORow
 {

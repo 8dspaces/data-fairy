@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-using PACKAGE_STRING.interfaces;
-using PACKAGE_STRING.dbvos;
+using {PACKAGE_STRING}.interfaces;
+using {PACKAGE_STRING}.dbvos;
 
-namespace PACKAGE_STRING.tables
+{NAME}space {PACKAGE_STRING}.tables
 {
-	public class CLASS_NAME : IDBVOTable
+	public class {CLASS_NAME} : IDBVOTable
 	{
 		protected IDBVOsModel _dbvos;
-		protected List<ROW_CLASS_NAME> _rowList;
+		protected List<{ROW_CLASS_NAME}> _rowList;
 	
-		public CLASS_NAME(IDBVOsModel dbvos)
+		public {CLASS_NAME}(IDBVOsModel dbvos)
 		{
 			_dbvos = dbvos;
 		}
 
-		public CLASS_NAME init()
+		public {CLASS_NAME} init()
 		{
-			_rowList = new List<ROW_CLASS_NAME>();
+			_rowList = new List<{ROW_CLASS_NAME}>();
 
-			ROW_LIST
+			{ROW_LIST}
 			
 			return this;
 		}
@@ -31,7 +31,7 @@ namespace PACKAGE_STRING.tables
 		public IDBVORow index(IDBVORow row)
 		{
 			row.dbvos = dbvos;
-			_rowList.Add((ROW_CLASS_NAME)(row));
+			_rowList.Add(({ROW_CLASS_NAME})(row));
 			return row;
 		}
 		
@@ -43,7 +43,7 @@ namespace PACKAGE_STRING.tables
 		
 		public string tableName
 		{
-			get { return "TABLE_NAME"; }
+			get { return "{TABLE_NAME}"; }
 		}
 		
 		public List<IDBVORow> rowList
@@ -51,9 +51,9 @@ namespace PACKAGE_STRING.tables
 			get { return new List<IDBVORow>(_rowList.Cast<IDBVORow>()); }
 		}
 
-		public Type rowType
+		public {TYPE} rowType
 		{
-			get { return typeof(ROW_CLASS_NAME); }
+			get { return {TYPE}of({ROW_CLASS_NAME}); }
 		}
 		
 		public IDBVORow getRow(int id)
@@ -66,9 +66,9 @@ namespace PACKAGE_STRING.tables
 			return null;
 		}
 		
-		public ROW_CLASS_NAME getRowCast(int id)
+		public {ROW_CLASS_NAME} getRowCast(int id)
 		{
-			return (ROW_CLASS_NAME)(getRow(id));
+			return ({ROW_CLASS_NAME})(getRow(id));
 		}
 	}
 }

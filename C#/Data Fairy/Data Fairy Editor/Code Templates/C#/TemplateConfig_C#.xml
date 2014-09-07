@@ -16,6 +16,7 @@
   <Fragment name="ClassProperty">fragments/ClassProperty.fragment.cs</Fragment>
   <Fragment name="ClassVariable">fragments/ClassVariable.fragment.cs</Fragment>
   <Fragment name="Constant">fragments/Constant.fragment.cs</Fragment>
+  <Fragment name="Enum">fragments/Enum.fragment.cs</Fragment>
   <Fragment name="LocalAssignment">fragments/LocalAssignment.fragment.cs</Fragment>
   <Fragment name="LocalVariable">fragments/LocalVariable.fragment.cs</Fragment>
   <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.cs</Fragment>

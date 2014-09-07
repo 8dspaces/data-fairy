@@ -1,12 +1,12 @@
 <?php
-/** @package PACKAGE_STRING.dbvos; */
+/** @package {PACKAGE_STRING}.dbvos; */
 
-class CLASS_NAME extends PropertyObject implements IDBVORow
+class {CLASS_NAME} extends PropertyObject implements IDBVORow
 {
 	/** IDBVOsModel */
 	private $_dbvos; 
 		
-	VARIABLE_LIST
+	{VARIABLE_LIST}
 	/** Int */
 	private $_id;
 		
@@ -18,10 +18,10 @@ class CLASS_NAME extends PropertyObject implements IDBVORow
 		$this->_dbvos = $dbvos;
 	}
 	
-	/** @return CLASS_NAME */
-	public function init(CLASS_PARAMS_STRING)
+	/** @return {CLASS_NAME} */
+	public function init({CLASS_PARAMS_STRING})
 	{
-		CLASS_PARAMS_LIST
+		{CLASS_PARAMS_LIST}
 		
 		return $this;
 	}
@@ -52,5 +52,5 @@ class CLASS_NAME extends PropertyObject implements IDBVORow
 		$this->_id = $value;
 	}
 
-	PROPERTY_LIST
+	{PROPERTY_LIST}
 }

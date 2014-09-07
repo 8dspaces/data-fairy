@@ -1,1 +1,1 @@
-		SCOPE var NAME:TYPE;
+		{SCOPE} var {NAME}:{TYPE};

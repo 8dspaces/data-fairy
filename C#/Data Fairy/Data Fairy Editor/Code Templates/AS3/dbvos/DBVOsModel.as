@@ -1,7 +1,7 @@
-package PACKAGE_STRING.dbvos
+package {PACKAGE_STRING}.dbvos
 {
-	import PACKAGE_STRING.interfaces.*;
-	import PACKAGE_STRING.tables.*;
+	import {PACKAGE_STRING}.interfaces.*;
+	import {PACKAGE_STRING}.tables.*;
 
 	public class DBVOsModel implements IDBVOsModel
 	{
@@ -11,7 +11,7 @@ package PACKAGE_STRING.dbvos
 		/** Has the list of tables been loaded yet */
 		protected var _loaded:Boolean;
 
-		VARIABLE_LIST
+		{VARIABLE_LIST}
 	
 		public function DBVOsModel():void
 		{
@@ -25,7 +25,7 @@ package PACKAGE_STRING.dbvos
 		{
 			var dbvos:IDBVOsModel = this;
 
-			CLASS_LIST
+			{CLASS_LIST}
 			
 			_loaded = true;
 		}
@@ -57,7 +57,7 @@ package PACKAGE_STRING.dbvos
 			return table.getRow(id);
 		}
 		
-		/** Retrieves a table by type */
+		/** Retrieves a table by {TYPE} */
 		public function selectTable(type:Class):IDBVOTable
 		{
 			for each(var table:IDBVOTable in _tableList)

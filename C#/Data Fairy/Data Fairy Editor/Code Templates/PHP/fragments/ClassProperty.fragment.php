@@ -1,14 +1,14 @@
-	private $_NAME; // cached lookup value
-	public function get_NAME()
+	private $_{NAME}; // cached lookup value
+	public function get_{NAME}()
 	{
-		if($this->_NAME == null)
-			$this->_NAME = $this->dbvos->retrieve($this->NAMEId, "TYPE");
-		return $this->_NAME;
+		if($this->_{NAME} == null)
+			$this->_{NAME} = $this->dbvos->retrieve($this->{NAME}Id, "{TYPE}");
+		return $this->_{NAME};
 	}
 		
-	function set_NAME($value)
+	function set_{NAME}($value)
 	{
 		// overrides cached value
-		$this->_NAME = value;
+		$this->_{NAME} = $value;
 	}
 		

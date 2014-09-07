@@ -145,6 +145,9 @@
     <Content Include="Code Templates\C#\tables\DBVOTableTemplate.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Code Templates\C#\fragments\Enum.fragment.cs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Compile Include="CodeExportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,52 +257,55 @@
     <Content Include="Code Templates\AS3\tables\DBVOTableTemplate.as">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\dbvos\DBVORowTemplate.hx">
+    <Content Include="Code Templates\Haxe Bubblegum\TemplateConfig_Haxe.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\dbvos\DBVOsModel.hx">
+    <Content Include="Code Templates\Haxe Classic\dbvos\DBVORowTemplate.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\AutoTests.hx">
+    <Content Include="Code Templates\Haxe Classic\dbvos\DBVOsModel.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\enums\DBVOEnumTemplate.hx">
+    <Content Include="Code Templates\Haxe Classic\AutoTests.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\fragments\ClassProperty.fragment.hx">
+    <Content Include="Code Templates\Haxe Classic\enums\DBVOEnumTemplate.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\fragments\ClassVariable.fragment.hx">
+    <Content Include="Code Templates\Haxe Classic\fragments\ClassProperty.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\fragments\Constant.fragment.hx">
+    <Content Include="Code Templates\Haxe Classic\fragments\ClassVariable.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\fragments\LocalAssignment.fragment.hx">
+    <Content Include="Code Templates\Haxe Classic\fragments\Constant.fragment.hx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Classic\fragments\LocalAssignment.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\fragments\LocalVariable.fragment.hx">
+    <Content Include="Code Templates\Haxe Classic\fragments\LocalVariable.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\fragments\NewClassInstance.fragment.hx">
+    <Content Include="Code Templates\Haxe Classic\fragments\NewClassInstance.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\fragments\Parameter.fragment.hx">
+    <Content Include="Code Templates\Haxe Classic\fragments\Parameter.fragment.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\interfaces\IDBVOEnum.hx">
+    <Content Include="Code Templates\Haxe Classic\interfaces\IDBVOEnum.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\interfaces\IDBVORow.hx">
+    <Content Include="Code Templates\Haxe Classic\interfaces\IDBVORow.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\interfaces\IDBVOsModel.hx">
+    <Content Include="Code Templates\Haxe Classic\interfaces\IDBVOsModel.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\interfaces\IDBVOTable.hx">
+    <Content Include="Code Templates\Haxe Classic\interfaces\IDBVOTable.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\tables\DBVOTableTemplate.hx">
+    <Content Include="Code Templates\Haxe Classic\tables\DBVOTableTemplate.hx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Code Templates\PHP\Autoload.inc.php">
@@ -367,6 +373,63 @@
     </Content>
     <Content Include="Code Templates\PHP\tables\DBVOTableTemplate.class.php">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\AutoTests.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\dbvos\DBVORowTemplate.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\dbvos\DBVOsModel.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\enums\DBVOEnumTemplate.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\fragments\ClassProperty.fragment.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\fragments\ClassVariable.fragment.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\fragments\Constant.fragment.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\fragments\LocalAssignment.fragment.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\fragments\LocalVariable.fragment.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\fragments\NewClassInstance.fragment.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\fragments\Parameter.fragment.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\interfaces\IDBVORow.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\interfaces\IDBVOsModel.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\interfaces\IDBVOTable.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\tables\DBVOTableTemplate.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Bubblegum\fragments\Enum.fragment.hx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\AS3\fragments\Enum.fragment.as">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\PHP\fragments\Enum.fragment.php">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Code Templates\Haxe Classic\fragments\Enum.fragment.hx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="DataFairy_KeyFile.pfx" />
     <None Include="Properties\app.manifest" />
@@ -439,7 +502,7 @@
     <Content Include="Code Templates\C#\TemplateConfig_C#.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Code Templates\Haxe\TemplateConfig_Haxe.xml">
+    <Content Include="Code Templates\Haxe Classic\TemplateConfig_Haxe.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Code Templates\PHP\TemplateConfig_PHP.xml">

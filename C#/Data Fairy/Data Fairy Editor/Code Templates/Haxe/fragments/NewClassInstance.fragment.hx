@@ -1,1 +1,0 @@
-cast index(new CLASS_NAME(dbvos).init(PARAMS))

@@ -1,1 +1,1 @@
-			var NAME:TYPE = VALUE;
+			var {NAME}:{TYPE} = {VALUE};

@@ -67,6 +67,9 @@ namespace net.mkv25.writer
         /** A fragment for defining a constant */
         public TemplateFragment ConstantFragment;
 
+        /** A fragment for defining a property in an enum */
+        public TemplateFragment EnumFragment;
+
         /** A fragment for variable assignment */
         public TemplateFragment LocalVariableFragment;
 
@@ -196,21 +199,21 @@ namespace net.mkv25.writer
 
                 // build the file
                 StringBuilder fileContents = new StringBuilder(EnumerationFileTemplate.FileContents);
-                StringBuilder variableList = new StringBuilder();
+                StringBuilder enumList = new StringBuilder();
 
                 // build the list of constants for the enum
-                variableList.AppendLine("// code generated list of all rows");
+                enumList.AppendLine("// code generated list of all rows");
                 foreach (DataRow row in table.Rows)
                 {
-                    var variableName = NameUtils.FormatClassConstantName(row["Name"].ToString());
-                    variableList.AppendLine(ConstantFragment.WriteConstant(variableName, getBasicType("int"), row["Id"].ToString()));
+                    var enumName = NameUtils.FormatClassConstantName(row["Name"].ToString());
+                    enumList.AppendLine(EnumFragment.WriteConstant(enumName, getBasicType("int"), row["Id"].ToString()));
                 }
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, TemplateVariables);
-                fileContents.Replace("PACKAGE_STRING", PackageString);
-                fileContents.Replace("CLASS_NAME", className);
-                fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace(Keys.PACKAGE_STRING, PackageString);
+                fileContents.Replace(Keys.CLASS_NAME, className);
+                fileContents.Replace(Keys.ENUM_VALUES_LIST, enumList.ToString().TrimEnd('\n', '\r'));
 
                 // write the file
                 var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
@@ -237,6 +240,7 @@ namespace net.mkv25.writer
             foreach (DataFairyTable table in SourceDataSet.Tables)
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Row";
+                var enumClassName = NameUtils.FormatClassName(table.TableName) + "Enum";
                 fileName = className + EXT;
 
                 // build the file
@@ -300,12 +304,13 @@ namespace net.mkv25.writer
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, TemplateVariables);
-                fileContents.Replace("PACKAGE_STRING", PackageString);
-                fileContents.Replace("CLASS_NAME", className);
-                fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
-                fileContents.Replace("PROPERTY_LIST", propertyList.ToString().TrimEnd('\n', '\r'));
-                fileContents.Replace("CLASS_PARAMS_STRING", paramsString.ToString().TrimEnd('\n', '\r'));
-                fileContents.Replace("CLASS_PARAMS_LIST", paramsList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace(Keys.VARIABLE_LIST, variableList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace(Keys.PROPERTY_LIST, propertyList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace(Keys.CLASS_PARAMS_STRING, paramsString.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace(Keys.CLASS_PARAMS_LIST, paramsList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace(Keys.ENUM_CLASS_NAME, enumClassName);
+                fileContents.Replace(Keys.CLASS_NAME, className);
+                fileContents.Replace(Keys.PACKAGE_STRING, PackageString);
 
                 // write the file
                 var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
@@ -333,6 +338,8 @@ namespace net.mkv25.writer
             {
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
                 var rowClassName = NameUtils.FormatClassName(table.TableName) + "Row";
+                var enumClassName = NameUtils.FormatClassName(table.TableName) + "Enum";
+
                 fileName = className + EXT;
 
                 // build the file
@@ -344,6 +351,9 @@ namespace net.mkv25.writer
                 foreach (DataRow row in table.Rows)
                 {
                     var rowParameters = new StringBuilder();
+
+                    var rowEnumName = NameUtils.FormatClassConstantName(row["Name"].ToString());
+                    var rowValueId = row["id"].ToString();
 
                     // populate list of variables
                     foreach (DataFairySchemaField field in table.Schema.AllFields)
@@ -369,17 +379,18 @@ namespace net.mkv25.writer
                         }
                     }
 
-                    var classValue = NewClassInstanceFragment.WriteNewClassInstance(rowClassName, rowParameters.ToString());
+                    var classValue = NewClassInstanceFragment.WriteNewClassInstance(rowClassName, rowParameters.ToString(), rowValueId, rowEnumName);
                     rowList.AppendLine(LocalVariableFragment.WriteLocalVariable(VariablePrefix + "row" + row["id"].ToString(), rowClassName, classValue));
                 }
 
                 // replace standard set of variables
                 ReplaceVariables(fileContents, TemplateVariables);
-                fileContents.Replace("PACKAGE_STRING", PackageString);
-                fileContents.Replace("ROW_CLASS_NAME", rowClassName);
-                fileContents.Replace("CLASS_NAME", className);
-                fileContents.Replace("TABLE_NAME", table.TableName);
-                fileContents.Replace("ROW_LIST", rowList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace(Keys.ROW_LIST, rowList.ToString().TrimEnd('\n', '\r'));
+                fileContents.Replace(Keys.PACKAGE_STRING, PackageString);
+                fileContents.Replace(Keys.ROW_CLASS_NAME, rowClassName);
+                fileContents.Replace(Keys.ENUM_CLASS_NAME, enumClassName);
+                fileContents.Replace(Keys.CLASS_NAME, className);
+                fileContents.Replace(Keys.TABLE_NAME, table.TableName);
 
                 // write the file
                 var filePath = outputDirectory + "\\" + FOLDER + "\\" + fileName;
@@ -415,27 +426,27 @@ namespace net.mkv25.writer
             variableList.AppendLine("// code generated list of all tables");
             foreach (DataTable table in SourceDataSet.Tables)
             {
+                var variableName = NameUtils.FormatClassConstantName(table.TableName);
                 var className = NameUtils.FormatClassName(table.TableName) + "Table";
-                var classValue = NewClassInstanceFragment.WriteNewClassInstance(className, "");
-                var varName = NameUtils.FormatClassConstantName(table.TableName);
-                variableList.AppendLine(ClassVariableFragment.WriteClassVariable(varName, className));
+                variableList.AppendLine(ClassVariableFragment.WriteClassVariable(variableName, className));
             }
 
             StringBuilder classList = new StringBuilder();
             classList.AppendLine("// code generated list of all tables");
             foreach (DataTable table in SourceDataSet.Tables)
             {
-                var className = NameUtils.FormatClassName(table.TableName) + "Table";
-                var classValue = NewClassInstanceFragment.WriteNewClassInstance(className, "");
                 var variableName = NameUtils.FormatClassConstantName(table.TableName);
+                var className = NameUtils.FormatClassName(table.TableName) + "Table";
+                var classValue = NewClassInstanceFragment.WriteNewClassInstance(className, "", "", variableName);
                 classList.AppendLine(LocalAssignmentFragment.WriteLocalAssignment(variableName, classValue));
             }
 
             // replace standard set of variables
             ReplaceVariables(fileContents, TemplateVariables);
-            fileContents.Replace("VARIABLE_LIST", variableList.ToString().TrimEnd('\n', '\r'));
-            fileContents.Replace("CLASS_LIST", classList.ToString().TrimEnd('\n', '\r'));
-            fileContents.Replace("PACKAGE_STRING", PackageString);
+            fileContents.Replace(Keys.VARIABLE_LIST, variableList.ToString().TrimEnd('\n', '\r'));
+            fileContents.Replace(Keys.CLASS_LIST, classList.ToString().TrimEnd('\n', '\r'));
+            fileContents.Replace(Keys.ENUM_CLASS_NAME, "this");
+            fileContents.Replace(Keys.PACKAGE_STRING, PackageString);
 
             // write the file
             var filePath = outputDirectory + "\\" + DataBaseFileTemplate.FileName;
@@ -461,7 +472,7 @@ namespace net.mkv25.writer
 
                 // build the file contents
                 ReplaceVariables(fileContents, TemplateVariables);
-                fileContents.Replace("PACKAGE_STRING", PackageString);
+                fileContents.Replace(Keys.PACKAGE_STRING, PackageString);
 
                 // write the file
                 var filePath = outputDirectory + "\\" + fileName;

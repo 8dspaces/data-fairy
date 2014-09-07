@@ -1,7 +1,7 @@
-using PACKAGE_STRING.dbvos;
-using PACKAGE_STRING.interfaces;
+using {PACKAGE_STRING}.dbvos;
+using {PACKAGE_STRING}.interfaces;
 
-namespace PACKAGE_STRING
+{NAME}space {PACKAGE_STRING}
 {
 	public class AutoTests
 	{

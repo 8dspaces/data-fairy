@@ -14,6 +14,7 @@
   <Fragment name="ClassProperty">fragments/ClassProperty.fragment.php</Fragment>
   <Fragment name="ClassVariable">fragments/ClassVariable.fragment.php</Fragment>
   <Fragment name="Constant">fragments/Constant.fragment.php</Fragment>
+  <Fragment name="Enum">fragments/Enum.fragment.php</Fragment>
   <Fragment name="LocalAssignment">fragments/LocalAssignment.fragment.php</Fragment>
   <Fragment name="LocalVariable">fragments/LocalVariable.fragment.php</Fragment>
   <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.php</Fragment>

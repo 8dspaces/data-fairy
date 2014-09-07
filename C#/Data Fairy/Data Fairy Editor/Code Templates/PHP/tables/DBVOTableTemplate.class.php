@@ -1,12 +1,12 @@
 <?php 
-/** @package PACKAGE_STRING.tables; */
+/** @package {PACKAGE_STRING}.tables; */
 
-class CLASS_NAME extends PropertyObject implements IDBVOTable
+class {CLASS_NAME} extends PropertyObject implements IDBVOTable
 {
 	/** IDBVOsModel */
 	private $_dbvos;
 
-	/** Array<IDBVORow>, Array<ROW_CLASS_NAME> */
+	/** Array<IDBVORow>, Array<{ROW_CLASS_NAME}> */
 	private $_rowList;
 
 	/** @param IDBVOsModel $dbvos */
@@ -15,12 +15,12 @@ class CLASS_NAME extends PropertyObject implements IDBVOTable
 		$this->_dbvos = $dbvos;
 	}
 
-	/** @return CLASS_NAME */
+	/** @return {CLASS_NAME} */
 	public function init()
 	{
-		$this->_rowList = array(); // Array<ROW_CLASS_NAME>();
+		$this->_rowList = array(); // Array<{ROW_CLASS_NAME}>();
 
-		ROW_LIST
+		{ROW_LIST}
 			
 		return $this;
 	}
@@ -53,7 +53,7 @@ class CLASS_NAME extends PropertyObject implements IDBVOTable
 	/** @return String */	
 	public function get_tableName()
 	{
-		return "TABLE_NAME";
+		return "{TABLE_NAME}";
 	}
 	
 	/** @return Array<IDBVORow> */
@@ -65,7 +65,7 @@ class CLASS_NAME extends PropertyObject implements IDBVOTable
 	/** @return String */
 	public function get_rowType()
 	{
-		return "ROW_CLASS_NAME";
+		return "{ROW_CLASS_NAME}";
 	}
 		
 	/**
@@ -84,7 +84,7 @@ class CLASS_NAME extends PropertyObject implements IDBVOTable
 		
 	/**
 	 * @param Int $id
-	 * @return ROW_CLASS_NAME
+	 * @return {ROW_CLASS_NAME}
 	 */
 	public function getRowCast($id)
 	{

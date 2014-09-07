@@ -1,23 +1,23 @@
-package PACKAGE_STRING.tables
+package {PACKAGE_STRING}.tables
 {
-	import PACKAGE_STRING.interfaces.*;
-	import PACKAGE_STRING.dbvos.ROW_CLASS_NAME;
+	import {PACKAGE_STRING}.interfaces.*;
+	import {PACKAGE_STRING}.dbvos.{ROW_CLASS_NAME};
 
-	public class CLASS_NAME implements IDBVOTable
+	public class {CLASS_NAME} implements IDBVOTable
 	{
 		protected var _dbvos:IDBVOsModel;
-		protected var _rowList:Vector.<ROW_CLASS_NAME>;
+		protected var _rowList:Vector.<{ROW_CLASS_NAME}>;
 	
-		public function CLASS_NAME(dbvos:IDBVOsModel):void
+		public function {CLASS_NAME}(dbvos:IDBVOsModel):void
 		{
 			_dbvos = dbvos;
 		}
 
-		public function init():CLASS_NAME
+		public function init():{CLASS_NAME}
 		{
-			_rowList = new Vector.<ROW_CLASS_NAME>();
+			_rowList = new Vector.<{ROW_CLASS_NAME}>();
 
-			ROW_LIST
+			{ROW_LIST}
 			
 			return this;
 		}
@@ -41,7 +41,7 @@ package PACKAGE_STRING.tables
 		
 		public function get tableName():String
 		{
-			return "TABLE_NAME";
+			return "{TABLE_NAME}";
 		}
 		
 		public function get rowList():Vector.<IDBVORow>
@@ -51,7 +51,7 @@ package PACKAGE_STRING.tables
 
 		public function get rowType():Class
 		{
-			return ROW_CLASS_NAME;
+			return {ROW_CLASS_NAME};
 		}
 		
 		public function getRow(id:int):IDBVORow
@@ -64,9 +64,9 @@ package PACKAGE_STRING.tables
 			return null;
 		}
 		
-		public function getRowCast(id:int):ROW_CLASS_NAME
+		public function getRowCast(id:int):{ROW_CLASS_NAME}
 		{
-			return getRow(id) as ROW_CLASS_NAME;
+			return getRow(id) as {ROW_CLASS_NAME};
 		}
 	}
 }
