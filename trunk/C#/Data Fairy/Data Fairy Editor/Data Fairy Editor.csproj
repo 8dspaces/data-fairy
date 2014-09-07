@@ -31,7 +31,7 @@
     <ProductName>Data Fairy</ProductName>
     <PublisherName>mkv25</PublisherName>
     <SuiteName>Data Fairy</SuiteName>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.6.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

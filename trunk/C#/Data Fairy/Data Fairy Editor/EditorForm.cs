@@ -35,7 +35,6 @@ namespace Data_Fairy_Editor
         void dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             var dataGridView = sender as DataGridView;
-            dataGridView.CurrentCell.Value = DBNull.Value;
         }
 
         public void UpdateViews()
