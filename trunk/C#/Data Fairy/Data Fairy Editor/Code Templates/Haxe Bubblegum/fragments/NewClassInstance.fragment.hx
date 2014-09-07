@@ -1,0 +1,1 @@
+cast index({ENUM_CLASS_NAME}.{ENUM_VALUE_NAME}, new {CLASS_NAME}(dbvos).init({PARAMS}))

@@ -1,2 +1,2 @@
-	/** TYPE */
-	SCOPE $NAME;
+	/** {TYPE} */
+	{SCOPE} ${NAME};

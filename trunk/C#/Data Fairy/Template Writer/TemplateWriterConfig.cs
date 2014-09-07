@@ -120,6 +120,8 @@ namespace net.mkv25.writer
                     template.ClassVariableFragment = fragment;
                 else if (fragmentName == "Constant")
                     template.ConstantFragment = fragment;
+                else if (fragmentName == "Enum")
+                    template.EnumFragment = fragment;
                 else if (fragmentName == "LocalAssignment")
                     template.LocalAssignmentFragment = fragment;
                 else if (fragmentName == "LocalVariable")

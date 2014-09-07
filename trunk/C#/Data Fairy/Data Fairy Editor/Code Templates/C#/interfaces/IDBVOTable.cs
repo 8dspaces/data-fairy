@@ -2,7 +2,7 @@ using System;
 using System.Data;
 using System.Collections.Generic;
 
-namespace PACKAGE_STRING.interfaces
+{NAME}space {PACKAGE_STRING}.interfaces
 {
 	public interface IDBVOTable
 	{
@@ -10,7 +10,7 @@ namespace PACKAGE_STRING.interfaces
 		
 		string tableName { get; }
 		List<IDBVORow> rowList { get; }
-		Type rowType { get; }
+		{TYPE} rowType { get; }
 		IDBVORow getRow(int id);
 	}
 }

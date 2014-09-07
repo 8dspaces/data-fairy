@@ -1,1 +1,1 @@
-$this->index(new CLASS_NAME($this->dbvos))->init(PARAMS)
+$this->index(new {CLASS_NAME}($this->dbvos))->init({PARAMS})

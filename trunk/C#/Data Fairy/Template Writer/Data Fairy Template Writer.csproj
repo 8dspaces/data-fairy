@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Keys.cs" />
     <Compile Include="NameUtils.cs" />
     <Compile Include="TemplateFile.cs" />
     <Compile Include="TemplateFragment.cs" />

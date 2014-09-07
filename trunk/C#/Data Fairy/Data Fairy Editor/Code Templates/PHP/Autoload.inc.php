@@ -3,13 +3,13 @@
 // define("DBVO_AUTOLOAD_PATH", "data/");
 // require_once('Autoload.inc.php');
 
-function __autoload($class_name) {
+function __autoload($CLASS_NAME) {
 
 	$path = '';
 	if(defined('DBVO_AUTOLOAD_PATH'))
 		$path = DBVO_AUTOLOAD_PATH;
 
-	$file = $class_name . '.class.php';
+	$file = $CLASS_NAME . '.class.php';
 
 	if(file_exists($path . 'base/' . $file)) {
 		require_once($path . 'base/' . $file);
@@ -36,5 +36,5 @@ function __autoload($class_name) {
 		return;
 	}
 
-	throw new Exception("Unable to find class file " . $file . " for type " . $class_name);
+	throw new Exception("Unable to find class file " . $file . " for type " . $CLASS_NAME);
 }

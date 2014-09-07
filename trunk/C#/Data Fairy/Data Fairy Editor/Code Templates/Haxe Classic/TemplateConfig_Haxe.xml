@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Config>
+  <!-- Important - The Haxe 3.0.0 compiler is required to take advantage of Wildcard (.*) package import statements -->
+  <Name>Haxe 3.0.0 - Classic - DBVOs</Name>
+  <Other>Retro-named as Aniseed</Other>
+  <Author>John Beech</Author>
+  <Contact>data.fairy@mkv25.net</Contact>
+
+  <!-- Core template files -->
+  <DatabaseFileTemplate>dbvos/DBVOsModel.hx</DatabaseFileTemplate>
+  <TableFileTemplate>tables/DBVOTableTemplate.hx</TableFileTemplate>
+  <RowFileTemplate>dbvos/DBVORowTemplate.hx</RowFileTemplate>
+  <EnumerationFileTemplate>enums/DBVOEnumTemplate.hx</EnumerationFileTemplate>
+
+  <!-- Core fragment templates -->
+  <Fragment name="ClassProperty">fragments/ClassProperty.fragment.hx</Fragment>
+  <Fragment name="ClassVariable">fragments/ClassVariable.fragment.hx</Fragment>
+  <Fragment name="Constant">fragments/Constant.fragment.hx</Fragment>
+  <Fragment name="Enum">fragments/Enum.fragment.hx</Fragment>
+  <Fragment name="LocalAssignment">fragments/LocalAssignment.fragment.hx</Fragment>
+  <Fragment name="LocalVariable">fragments/LocalVariable.fragment.hx</Fragment>
+  <Fragment name="NewClassInstance">fragments/NewClassInstance.fragment.hx</Fragment>
+  <Fragment name="Parameter">fragments/Parameter.fragment.hx</Fragment>
+  <VariablePrefix></VariablePrefix>
+
+  <!-- Basic {TYPE}s for this language -->
+  <Type name="int">Int</Type>
+  <Type name="string">String</Type>
+  <Type name="decimal">Float</Type>
+
+  <!-- Supporting package files -->
+  <PackageFile>AutoTests.hx</PackageFile>
+  <PackageFile>interfaces/IDBVOsModel.hx</PackageFile>
+  <PackageFile>interfaces/IDBVOEnum.hx</PackageFile>
+  <PackageFile>interfaces/IDBVOTable.hx</PackageFile>
+  <PackageFile>interfaces/IDBVORow.hx</PackageFile>
+
+  <!-- Package generation options -->
+  <PackageSeperator>.</PackageSeperator>
+  <GeneratePackageFolderStructure>true</GeneratePackageFolderStructure>
+  <ForceLowercasePackageStructure>true</ForceLowercasePackageStructure>
+
+</Config>

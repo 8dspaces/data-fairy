@@ -1,9 +1,9 @@
-package PACKAGE_STRING
+package {PACKAGE_STRING}
 {
 	import flash.display.Sprite;
-	import PACKAGE_STRING.dbvos.DBVOsModel;
-	import PACKAGE_STRING.interfaces.IDBVOsModel;
-	import PACKAGE_STRING.interfaces.IDBVOTable;
+	import {PACKAGE_STRING}.dbvos.DBVOsModel;
+	import {PACKAGE_STRING}.interfaces.IDBVOsModel;
+	import {PACKAGE_STRING}.interfaces.IDBVOTable;
 	
 	public class AutoTests extends Sprite
 	{

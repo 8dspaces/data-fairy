@@ -1,15 +1,15 @@
-		protected TYPE _NAME; // cached lookup value
-		public TYPE NAME
+		protected {TYPE} _{NAME}; // cached lookup value
+		public {TYPE} {NAME}
 		{
 			get {
-				if(_NAME == null)
-					_NAME = dbvos.retrieve(NAMEId, typeof(TYPE)) as TYPE;
-				return _NAME;
+				if(_{NAME} == null)
+					_{NAME} = dbvos.retrieve({NAME}Id, typeof({TYPE})) as {TYPE};
+				return _{NAME};
 			}
 			set 
 			{
 				// overrides cached value
-				_NAME = value;
+				_{NAME} = value;
 			}
 		}
 		

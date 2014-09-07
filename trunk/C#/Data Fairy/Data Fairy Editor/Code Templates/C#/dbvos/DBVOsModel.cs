@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-using PACKAGE_STRING.interfaces;
-using PACKAGE_STRING.tables;
+using {PACKAGE_STRING}.interfaces;
+using {PACKAGE_STRING}.tables;
 	
-namespace PACKAGE_STRING.dbvos
+{NAME}space {PACKAGE_STRING}.dbvos
 {
 	public class DBVOsModel : IDBVOsModel
 	{
@@ -17,7 +17,7 @@ namespace PACKAGE_STRING.dbvos
 		/** Has the list of tables been loaded yet */
 		protected bool _loaded;
 
-		VARIABLE_LIST
+		{VARIABLE_LIST}
 	
 		public DBVOsModel()
 		{
@@ -31,7 +31,7 @@ namespace PACKAGE_STRING.dbvos
 		{
 			IDBVOsModel dbvos = this;
 
-			CLASS_LIST
+			{CLASS_LIST}
 			
 			_loaded = true;
 		}

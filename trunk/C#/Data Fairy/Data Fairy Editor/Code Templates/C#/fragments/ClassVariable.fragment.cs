@@ -1,1 +1,1 @@
-		SCOPE TYPE NAME;
+		{SCOPE} {TYPE} {NAME};

@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Data;
 
-using PACKAGE_STRING.interfaces;
+using {PACKAGE_STRING}.interfaces;
 
-namespace PACKAGE_STRING.dbvos
+{NAME}space {PACKAGE_STRING}.dbvos
 {
-	public class CLASS_NAME : IDBVORow
+	public class {CLASS_NAME} : IDBVORow
 	{
 		protected IDBVOsModel _dbvos;
 		
-		VARIABLE_LIST
+		{VARIABLE_LIST}
 		protected int _id;
 		
-		public CLASS_NAME(IDBVOsModel dbvos)
+		public {CLASS_NAME}(IDBVOsModel dbvos)
 		{
 			_dbvos = dbvos;
 		}
 		
-		public CLASS_NAME init(CLASS_PARAMS_STRING)
+		public {CLASS_NAME} init({CLASS_PARAMS_STRING})
 		{
-			CLASS_PARAMS_LIST
+			{CLASS_PARAMS_LIST}
 		
 			return this;
 		}
@@ -39,6 +39,6 @@ namespace PACKAGE_STRING.dbvos
 			set { _id = value; }
 		}
 
-		PROPERTY_LIST
+		{PROPERTY_LIST}
 	}
 }

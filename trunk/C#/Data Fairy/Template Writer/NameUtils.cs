@@ -66,5 +66,10 @@ namespace net.mkv25.writer
 
             return newName;
         }
+
+        public static string FormatClassEnumName(string variableName)
+        {
+            return NameUtils.FormatVariableName(variableName).ToUpperInvariant();
+        }
     }
 }
